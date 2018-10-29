@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181022143918"/>
+		date="20181022211629"/>
 	<dependencies>
 		<module organisation="org.scalafx" name="scalafx_2.12">
 			<revision name="8.0.181-R13" status="release" pubdate="20180930120053" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalafx.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="4">
