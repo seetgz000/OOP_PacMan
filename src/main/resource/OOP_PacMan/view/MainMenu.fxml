@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
@@ -7,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../style/Style.css" type="BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="background" maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <Label id="title" prefHeight="81.0" prefWidth="225.0" styleClass="font" text="Pacman" textFill="#e5ff20" BorderPane.alignment="BOTTOM_CENTER">
          <font>
@@ -26,7 +27,7 @@
       </TilePane>
    </center>
    <bottom>
-      <VBox alignment="TOP_CENTER" prefHeight="244.0" prefWidth="198.0" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="244.0" prefWidth="198.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="129.0" text="Start">
                <VBox.margin>
@@ -67,4 +68,4 @@
          </children>
       </VBox>
    </bottom>
-</fx:root>
+</BorderPane>

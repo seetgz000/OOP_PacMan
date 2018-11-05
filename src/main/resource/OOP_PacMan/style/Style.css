@@ -11,10 +11,11 @@
 	-fx-font-family: 'Fleftex';
 }
 
+.title-button{
+	-fx-font-size: 12px;
+}
+
 #title{
 	-fx-font-size: 50px;
 }
 
-.title-button{
-	-fx-font-size: 12px;
-}

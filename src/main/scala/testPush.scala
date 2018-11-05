@@ -1,3 +1,0 @@
-class testPush {
-  print("test")
-}
