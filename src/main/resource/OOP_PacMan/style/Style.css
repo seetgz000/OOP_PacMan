@@ -1,0 +1,21 @@
+@font-face{
+		font-family: 'Fleftex';
+		src: url("../font/Fleftex_M.ttf");
+}
+
+.background{
+	-fx-background-color: black;
+}
+
+.font{
+	-fx-font-family: 'Fleftex';
+}
+
+.title-button{
+	-fx-font-size: 12px;
+}
+
+#title{
+	-fx-font-size: 50px;
+}
+
