@@ -5,6 +5,7 @@ import scalafx.scene.Scene
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
+import scalafx.scene.text.Font
 
 object Main extends JFXApp{
   val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
@@ -13,12 +14,13 @@ object Main extends JFXApp{
   loader.load(rootResource)
   val roots = loader.getRoot[jfxs.layout.BorderPane]
   stage = new PrimaryStage {
-    title = "Pacman"
+    title = "Pac Man"
     maxWidth = 400
     maxHeight =600
     scene = new Scene {
       root = roots
       stylesheets add getClass.getResource("style/Style.css").toExternalForm
+      Font.loadFont(getClass.getResourceAsStream("font/Fleftex_M.ttf"), 16)
     }
   }
 }
