@@ -7,7 +7,7 @@
 		revision="0.1"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20181022143918"/>
+		date="20181107040633"/>
 	<dependencies>
 		<module organisation="org.scalafx" name="scalafxml-core-sfx8_2.12">
 			<revision name="0.4" status="release" pubdate="20170620172418" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/vigoo/scalafxml" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">

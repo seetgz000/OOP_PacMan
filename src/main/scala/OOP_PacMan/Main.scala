@@ -19,8 +19,8 @@ object Main extends JFXApp{
     maxHeight =600
     scene = new Scene {
       root = roots
-      stylesheets add getClass.getResource("style/Style.css").toExternalForm
       Font.loadFont(getClass.getResourceAsStream("font/Fleftex_M.ttf"), 16)
+      stylesheets add getClass.getResource("style/Style.css").toExternalForm
     }
   }
 }
