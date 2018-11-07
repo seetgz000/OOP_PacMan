@@ -13,4 +13,5 @@ $ git add src/main
 
 ## Create branch for each feature/bugs to fix (update by Ang)
 $ git checkout -b (branch name) //create branch
+
 $ git branch -d (branch name) //delere branch
