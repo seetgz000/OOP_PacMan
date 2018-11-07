@@ -14,3 +14,27 @@
 	-fx-font-size: 50px;
 }
 
+.font-Title-GameOver{
+	-fx-font-family: 'Fleftex';
+	-fx-font-size: 42px;
+}
+
+.font-GameOver{
+	-fx-font-family: 'Fleftex';
+	-fx-font-size: 28px;
+}
+
+.font-Title-HighScore{
+	-fx-font-family: 'Fleftex';
+	-fx-font-size: 42px;
+}
+
+.font-TableTitle-HighScore{
+	-fx-font-family: 'Fleftex';
+	-fx-font-size: 24px;
+}
+
+.font-HighScore{
+	-fx-font-family: 'Fleftex';
+	-fx-font-size: 16px;
+}
