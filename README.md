@@ -15,5 +15,7 @@ be different and it will be harder to merge
 $ git add src/main
 
 $ git checkout -b (branch name) //create branch
+
 $ git push (branch name) //push changes of branch
+
 $ git branch -d (branch name) //delere branch
