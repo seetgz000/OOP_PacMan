@@ -1,5 +1,5 @@
 ## Please pull before every time work
-$ git pull origin master  
+$ git pull origin master 
 
 ## To push what you have done
 $ git add .  
@@ -15,3 +15,7 @@ $ git add src/main
 $ git checkout -b (branch name) //create branch
 
 $ git branch -d (branch name) //delere branch
+
+$ git pull (branch name) //receive changes of branch
+
+$ git push (branch name) //push changes of branch
