@@ -10,10 +10,23 @@
 	-fx-font-size: 12px;
 }
 
-#title{
-	-fx-font-size: 50px;
+//gameplay page
+. instruction-border{
+    -fx-border-color: yellow ;
+    -fx-border-width: 2;
 }
 
+.instruction-border .label{
+    -fx-text-fill: white;
+    -fx-font-family: 'Fleftex';
+    -fx-font-size: 20px;
+}
+
+.exit-button{
+    -fx-background-color: transparent;
+}
+
+//game over page
 .font-Title-GameOver{
 	-fx-font-family: 'Fleftex';
 	-fx-font-size: 42px;
@@ -24,6 +37,7 @@
 	-fx-font-size: 28px;
 }
 
+//game play page
 .font-Title-HighScore{
 	-fx-font-family: 'Fleftex';
 	-fx-font-size: 42px;
@@ -38,3 +52,11 @@
 	-fx-font-family: 'Fleftex';
 	-fx-font-size: 16px;
 }
+
+
+
+#title{
+	-fx-font-size: 50px;
+}
+
+
