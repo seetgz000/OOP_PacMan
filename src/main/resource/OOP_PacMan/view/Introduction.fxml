@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.IntroController">
+   <styleClass>
+      <String fx:value="instruction-border" />
+      <String fx:value="background" />
+   </styleClass>
+   <children>
+      <BorderPane prefHeight="25.0" prefWidth="296.0">
+         <right>
+            <Button mnemonicParsing="false" styleClass="exit-button" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fx:id="close" fitHeight="22.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+         </right>
+      </BorderPane>
+      <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Instruction">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <ImageView fx:id="directionalKeys" fitHeight="86.0" fitWidth="117.0" pickOnBounds="true">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label text="To move" />
+      <ImageView fx:id="escKey" fitHeight="78.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label text="To pause" />
+   </children>
+</VBox>
