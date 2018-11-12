@@ -4,6 +4,8 @@ version := "0.1"
 
 scalaVersion := "2.12.7"
 
+resourceDirectory in Compile := baseDirectory.value / "src/main/resource"
+
 // https://mvnrepository.com/artifact/org.scalafx/scalafx
 libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.181-R13"
 

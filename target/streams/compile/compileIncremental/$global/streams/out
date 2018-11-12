@@ -1,15 +1,43 @@
-[0m[[0m[0mdebug[0m] [0m[0mFull compilation, no sources in previous analysis.[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
-[0m[[0m[0mdebug[0m] [0m[0mRecompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial source changes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	removed:Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\src\main\scala\OOP_PacMan\Game.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set(C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$$anon$1.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$$anon$2$$anon$5.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$$anon$2$$anon$4.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$delayedInit$body.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$$anon$1$$anon$6.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$$anon$2.class, C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes\OOP_PacMan\Game$$anon$2$$anon$3.class)[0m
+[0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(OOP_PacMan.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	product: Set(C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\src\main\scala\OOP_PacMan\Game.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(OOP_PacMan.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\src\main\scala\OOP_PacMan\Game.scala)[0m
 [0m[[0m[0minfo[0m] [0m[0mCompiling 1 Scala source to C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.4:compile for Scala 2.12.7[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting org.scala-sbt:compiler-bridge_2.12:1.2.4:compile for Scala 2.12.7[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 219269f8 for Scala compiler version 2.12.7[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 660934d0 for Scala compiler version 2.12.7[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-Xplugin:C:\Users\User\.ivy2\cache\org.scalamacros\paradise_2.12.7\jars\paradise_2.12.7-2.1.1.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-bootclasspath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\User\.sbt\boot\scala-2.12.7\lib\scala-library.jar[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\target\scala-2.12\classes;C:\Users\User\.ivy2\cache\org.scalafx\scalafx_2.12\jars\scalafx_2.12-8.0.181-R13.jar;C:\Users\User\.sbt\boot\scala-2.12.7\lib\scala-reflect.jar;C:\Users\User\.ivy2\cache\org.scalafx\scalafxml-core-sfx8_2.12\jars\scalafxml-core-sfx8_2.12-0.4.jar;C:\Users\User\.ivy2\cache\org.scalafx\scalafxml-core-macros-sfx8_2.12\jars\scalafxml-core-macros-sfx8_2.12-0.4.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.943022351 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.876203073 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from OOP_PacMan.Game...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(OOP_PacMan.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(OOP_PacMan.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(OOP_PacMan.Game,ModifiedNames(changes = UsedName(showPacman,[Default]), UsedName(showGameCanvas,[Default]))) invalidates 1 classes due to The OOP_PacMan.Game has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(showPacman,[Default]), UsedName(showGameCanvas,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(OOP_PacMan.Game)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m	> [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll newly invalidated classes after taking into account (previously) recompiled classes:Set()[0m
