@@ -14,4 +14,8 @@ class MainController {
   def startIntroduction(action:ActionEvent)={
     Main.showIntroduction()
   }
+
+  def showHighScore(actionEvent: ActionEvent) = {
+    Main.showHighScore()
+  }
 }

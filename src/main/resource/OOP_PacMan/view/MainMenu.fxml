@@ -53,7 +53,7 @@
                   <String fx:value="title-button" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="129.0" text="High Score">
+            <Button mnemonicParsing="false" onAction="#showHighScore" prefHeight="48.0" prefWidth="129.0" text="High Score">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>

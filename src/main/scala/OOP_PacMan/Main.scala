@@ -46,5 +46,13 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
   }
 
+  def showHighScore():Unit ={
+    val resource = getClass.getResourceAsStream("view/HighScores.fxml")
+    val loader = new FXMLLoader(null, NoDependencyResolver)
+    loader.load(resource);
+    val roots2 = loader.getRoot[jfxs.layout.VBox]
+    stage.scene().setRoot(roots2)
+  }
+
 
 }
