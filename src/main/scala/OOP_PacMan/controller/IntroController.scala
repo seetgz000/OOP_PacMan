@@ -9,9 +9,9 @@ import scalafxml.core.macros.sfxml
 
 @sfxml
 class IntroController(
-                        val close : ImageView,
-                        val directionalKeys: ImageView,
-                        val escKey: ImageView
+                       private val close : ImageView,
+                       private val directionalKeys: ImageView,
+                       private val escKey: ImageView
                      ) {
 
   val closeBtnImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/close.png"))
