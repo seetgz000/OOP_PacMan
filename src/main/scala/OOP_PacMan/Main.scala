@@ -19,7 +19,9 @@ object Main extends JFXApp {
   stage = new PrimaryStage {
     title = "Pac Man"
     maxWidth = 400
+    minWidth = 400
     maxHeight = 700
+    minHeight = 700
     scene = new Scene {
       root = roots
       Font.loadFont(getClass.getResourceAsStream("font/Fleftex_M.ttf"), 16)
