@@ -11,7 +11,7 @@ class MainController {
     Main.playGame()
   }
 
-  def startIntroduction(action:ActionEvent)={
+  def startIntro(action:ActionEvent)={
     Main.showIntroduction()
   }
 }

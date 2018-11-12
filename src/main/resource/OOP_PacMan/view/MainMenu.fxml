@@ -41,7 +41,7 @@
                   <String fx:value="title-button" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" onAction="#startIntroduction" prefHeight="48.0" prefWidth="129.0" text="Introduction">
+            <Button mnemonicParsing="false" onAction="#startIntro" prefHeight="48.0" prefWidth="129.0" text="Introduction">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
