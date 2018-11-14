@@ -17,7 +17,7 @@ object Game extends JFXApp {
   val loader = new FXMLLoader(null, NoDependencyResolver)
   loader.load(rootResource)
   val roots = loader.getRoot[jfxs.layout.BorderPane]
-w
+  val pacmanCursor = new Image(getClass.getResource("image/pacmanGIF(fast).gif").toString)
   stage = new PrimaryStage () {
     scene = new Scene {
       root = roots

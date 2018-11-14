@@ -4,7 +4,7 @@
 		module="oop_pacman$sources"
 		revision="0.1"
 		status="integration"
-		publication="20181112144423"
+		publication="20181114142113"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
