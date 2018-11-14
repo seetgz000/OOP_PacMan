@@ -42,8 +42,24 @@ object Game extends JFXApp {
         pacmanV
       )
 
+      val path = new Path() {
+        elements = List(
+          MoveTo(80, 70),
+          LineTo(80, 90),
+          LineTo(110, 90),
+          LineTo(80, 70)
+        )
+      }
+      val transition = new PathTransition(Duration(500), path, pacmanV){
+        cycleCount = PathTransition.Indefinite
+        autoReverse = false
+      }
+
+
       onKeyPressed = (e:KeyEvent) => {
-        if(e.code == KeyCode.Up) pacmanV.setTranslateY(pacmanV.getTranslateY - 5)
+        if(e.code == KeyCode.W) {
+          transition.play()
+        }
       }
     }
     this.roots.getChildren().add(roots)

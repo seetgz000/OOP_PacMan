@@ -1,7 +1,8 @@
-/target
+/target/
+taget
 *.class
 *.iml
 *.ipr
 *.iws
-.idea
-out
+/.idea/
+.project
