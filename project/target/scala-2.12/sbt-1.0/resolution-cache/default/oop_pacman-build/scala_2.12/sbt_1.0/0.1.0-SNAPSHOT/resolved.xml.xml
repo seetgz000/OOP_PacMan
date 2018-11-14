@@ -4,7 +4,7 @@
 		module="oop_pacman-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20181114151604"
+		publication="20181114154744"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
