@@ -1,4 +1,5 @@
 package OOP_PacMan
+import java.io.File
 
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
@@ -29,26 +30,29 @@ object Main extends JFXApp {
     }
   }
 
-  //introduction page
-  val resource = getClass.getResourceAsStream("view/Introduction.fxml")
-  val introLoader = new FXMLLoader(null, NoDependencyResolver)
-  introLoader.load(resource);
-  val introRoot = introLoader.getRoot[jfxs.Parent]
+  //roots.getChildren.add()
 
   def showIntroduction():Unit ={
-    roots.setCenter(introRoot)
+    val resource = getClass.getResourceAsStream("view/Introduction.fxml")
+    val loader = new FXMLLoader(null, NoDependencyResolver)
+    loader.load(resource);
+    val instructionRoot = loader.getRoot[jfxs.layout.VBox]
+    stage.scene().setRoot(instructionRoot)
   }
 
-  def closeIntroduction()={
-    roots.getChildren.remove(introRoot)
-  }
-
-  //playGame page
   def playGame(): Unit = {
     val resource = getClass.getResourceAsStream("view/PlayGame.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
+    stage.scene().setRoot(roots2)
+  }
+
+  def showHighScore():Unit ={
+    val resource = getClass.getResourceAsStream("view/HighScores.fxml")
+    val loader = new FXMLLoader(null, NoDependencyResolver)
+    loader.load(resource);
+    val roots2 = loader.getRoot[jfxs.layout.VBox]
     stage.scene().setRoot(roots2)
   }
 
