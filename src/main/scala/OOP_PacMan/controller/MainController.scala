@@ -11,6 +11,7 @@ class MainController {
     Main.playGame()
   }
 
+<<<<<<< HEAD
   def startIntroduction(action:ActionEvent)={
     Main.showIntroduction()
   }
@@ -18,4 +19,9 @@ class MainController {
   def showHighScore(actionEvent: ActionEvent) = {
     Main.showHighScore()
   }
+=======
+  def startIntro(action:ActionEvent)={
+    Main.showIntroduction()
+  }
+>>>>>>> origin/scene_switching
 }
