@@ -4,7 +4,7 @@
 		module="oop_pacman_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20181107040633"
+		publication="20181114151019"
 	>
 		<description>
 		OOP_PacMan
@@ -34,6 +34,7 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.12.7" conf="scala-tool->default,optional(default);compile->default(compile)"/>
 		<dependency org="org.scalafx" name="scalafx_2.12" rev="8.0.181-R13" conf="compile->default(compile)"/>
 		<dependency org="org.scalafx" name="scalafxml-core-sfx8_2.12" rev="0.4" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="8.0.13" conf="compile->default(compile)"/>
 		<dependency org="org.scalamacros" name="paradise_2.12.7" rev="2.1.1" conf="plugin->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -4,7 +4,7 @@
     <profile name="sbt 1" modules="oop_pacman" />
     <profile name="sbt 2" modules="OOP_PacMan">
       <plugins>
-        <plugin path="C:\Users\Thoo Zhi Wen\.ivy2\cache\org.scalamacros\paradise_2.12.7\jars\paradise_2.12.7-2.1.1.jar" />
+        <plugin path="C:\Users\angbl\.ivy2\cache\org.scalamacros\paradise_2.12.7\jars\paradise_2.12.7-2.1.1.jar" />
       </plugins>
     </profile>
   </component>

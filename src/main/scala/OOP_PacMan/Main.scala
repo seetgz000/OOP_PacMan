@@ -30,16 +30,21 @@ object Main extends JFXApp {
     }
   }
 
-  //roots.getChildren.add()
+  //introduction page
+  val resource = getClass.getResourceAsStream("view/Introduction.fxml")
+  val introLoader = new FXMLLoader(null, NoDependencyResolver)
+  introLoader.load(resource);
+  val introRoot = introLoader.getRoot[jfxs.Parent]
 
   def showIntroduction():Unit ={
-    val resource = getClass.getResourceAsStream("view/Introduction.fxml")
-    val loader = new FXMLLoader(null, NoDependencyResolver)
-    loader.load(resource);
-    val instructionRoot = loader.getRoot[jfxs.layout.VBox]
-    stage.scene().setRoot(instructionRoot)
+    roots.setCenter(introRoot)
   }
 
+  def closeIntroduction()={
+    roots.getChildren.remove(introRoot)
+  }
+
+  //play game page
   def playGame(): Unit = {
     val resource = getClass.getResourceAsStream("view/PlayGame.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
@@ -48,6 +53,7 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
   }
 
+  //show high score page
   def showHighScore():Unit ={
     val resource = getClass.getResourceAsStream("view/HighScores.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
