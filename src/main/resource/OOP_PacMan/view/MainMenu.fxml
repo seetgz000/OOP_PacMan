@@ -8,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="background" maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane id="background" maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.MainController">
    <top>
       <Label id="title" prefHeight="81.0" prefWidth="225.0" styleClass="font" text="Pacman" textFill="#e5ff20" BorderPane.alignment="BOTTOM_CENTER">
          <font>
@@ -29,7 +29,7 @@
    <bottom>
       <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="244.0" prefWidth="198.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="129.0" text="Start">
+            <Button mnemonicParsing="false" onAction="#startGame" prefHeight="48.0" prefWidth="129.0" text="Start">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -41,7 +41,7 @@
                   <String fx:value="title-button" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="129.0" text="Introduction">
+            <Button mnemonicParsing="false" onAction="#startIntro" prefHeight="48.0" prefWidth="129.0" text="Introduction">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
@@ -53,7 +53,7 @@
                   <String fx:value="title-button" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="129.0" text="High Score">
+            <Button mnemonicParsing="false" onAction="#showHighScore" prefHeight="48.0" prefWidth="129.0" text="High Score">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
