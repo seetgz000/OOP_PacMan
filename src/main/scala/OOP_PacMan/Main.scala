@@ -3,7 +3,7 @@ import java.io.File
 
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
-import scalafx.scene.{Parent, Scene, image}
+import scalafx.scene.{Parent, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
