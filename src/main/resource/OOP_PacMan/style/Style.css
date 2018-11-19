@@ -6,8 +6,22 @@
 	-fx-font-family: 'Fleftex';
 }
 
+//we can use this for all buttons in the game probably...
 .title-button{
+	-fx-background-image: url("../image/button.png");
 	-fx-font-size: 12px;
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-background-repeat: no-repeat;
+}
+
+.title-button:pressed{
+	-fx-background-image: url("../image/buttonSelected.png");
+	-fx-font-size: 12px;
+	-fx-background-color: transparent;
+	-fx-text-fill: black;
+	-fx-background-repeat: no-repeat;
+
 }
 
 //instruction page
@@ -58,5 +72,4 @@
 #title{
 	-fx-font-size: 50px;
 }
-
 
