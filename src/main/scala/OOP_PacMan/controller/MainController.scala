@@ -6,7 +6,7 @@ import OOP_PacMan.Main
 import scalafx.animation.PathTransition
 import scalafx.event.ActionEvent
 import scalafx.scene.image.{Image, ImageView}
-import scalafx.scene.layout.HBox
+import scalafx.scene.layout.{HBox, StackPane}
 import scalafx.scene.shape.{LineTo, MoveTo, Path}
 import scalafx.util.Duration
 import scalafxml.core.macros.sfxml
@@ -15,7 +15,11 @@ import scalafxml.core.macros.sfxml
 class MainController(
                       private val transition1: HBox,
                       private val ghostV: ImageView,
-                      private val pacmanV: ImageView
+                      private val pacmanV: ImageView,
+                      private val close : ImageView,
+                      private val directionalKeys: ImageView,
+                      private val escKey: ImageView,
+                      private val introRoot:StackPane
                     ) {
 
   def startGame(action: ActionEvent)={
@@ -27,7 +31,10 @@ class MainController(
   }
 
   def startIntro(action:ActionEvent)={
-    Main.showIntroduction()
+    introRoot.toFront()//time to bring it out
+  }
+  def closeIntro(action:ActionEvent)={
+    introRoot.toBack()//hide it again as its closed
   }
 
   // animation for pacman chasing ghosts
@@ -37,6 +44,15 @@ class MainController(
       LineTo (600, 100)
     )
   }
+
+  val closeBtnImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/close.png"))
+  val directionalImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/keyboard.png"))
+  val escapeImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
+
+  close.setImage(closeBtnImg)
+  directionalKeys.setImage(directionalImg)
+  escKey.setImage(escapeImg)
+
 
   val ghost = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/4ghost-img.png"))
   ghostV.setImage(ghost)
