@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.effect.*?>
@@ -20,10 +21,18 @@
       </Label>
    </top>
    <center>
-      <TilePane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TilePane alignment="CENTER" prefHeight="184.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" />
          </BorderPane.margin>
+         <children>
+            <HBox fx:id="transition1" alignment="CENTER_LEFT" prefHeight="172.0" prefWidth="399.0">
+               <children>
+                  <ImageView fx:id="pacmanV" fitHeight="128.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="ghostV" fitHeight="128.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+         </children>
       </TilePane>
    </center>
    <bottom>

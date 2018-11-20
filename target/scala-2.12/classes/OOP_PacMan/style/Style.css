@@ -10,7 +10,11 @@
 	-fx-font-size: 12px;
 }
 
+<<<<<<< HEAD
 //gameplay page
+=======
+//instruction page
+>>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 . instruction-border{
     -fx-border-color: yellow ;
     -fx-border-width: 2;
@@ -53,6 +57,7 @@
 	-fx-font-size: 16px;
 }
 
+<<<<<<< HEAD
 .font-name{
 	-fx-font-family: 'Fleftex';
 	-fx-font-size: 28px;
@@ -68,11 +73,15 @@
     -fx-background-color: #a9a9a9 , white , white;
     -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
 }
+=======
+
+>>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 
 #title{
 	-fx-font-size: 50px;
 }
 
+<<<<<<< HEAD
 .player-Table{
     -fx-font-family: 'Fleftex';
 	-fx-font-size: 16px;
@@ -109,4 +118,6 @@
     -fx-background-insets: 0;
     -fx-padding: 0;
 }
+=======
+>>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 

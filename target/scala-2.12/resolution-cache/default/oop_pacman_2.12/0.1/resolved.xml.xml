@@ -4,7 +4,11 @@
 		module="oop_pacman_2.12"
 		revision="0.1"
 		status="integration"
+<<<<<<< HEAD
 		publication="20181120155212"
+=======
+		publication="20181119181805"
+>>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 	>
 		<description>
 		OOP_PacMan
