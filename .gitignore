@@ -1,5 +1,8 @@
-# Created by https://www.gitignore.io/api/intellij
-# Edit at https://www.gitignore.io/?templates=intellij
+/target/
+target
+
+# Created by https://www.gitignore.io/api/scala,intellij
+# Edit at https://www.gitignore.io/?templates=scala,intellij
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -80,14 +83,8 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.gitignore.io/api/intellij
-
-# Created by https://www.gitignore.io/api/scala
-# Edit at https://www.gitignore.io/?templates=scala
-
 ### Scala ###
 *.class
 *.log
-.project
 
-# End of https://www.gitignore.io/api/scala
+# End of https://www.gitignore.io/api/scala,intellij

@@ -67,4 +67,3 @@ object Game extends JFXApp {
   showPacman()
 
 }
-

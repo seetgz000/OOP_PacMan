@@ -215,9 +215,7 @@ object ZenPongMain extends JFXApp {
 
 
   /**
-
     * Controls whether the startButton is visible
-
     */
 
   val startVisible = BooleanProperty(true)
@@ -279,9 +277,7 @@ object ZenPongMain extends JFXApp {
 
 
   /** The Group containing all of the walls, paddles, and ball. This also allows
-
     * us to requestFocus for KeyEvents on the Group
-
     */
 
   val pongComponents: Group = new Group {
@@ -359,11 +355,8 @@ object ZenPongMain extends JFXApp {
 
 
   /** Checks whether or not the ball has collided with either the paddles,
-
     * topWall, or bottomWall.  If the ball hits the wall behind the paddles,
-
     * the game is over.
-
     */
 
   def checkForCollision() {
