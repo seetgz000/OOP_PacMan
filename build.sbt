@@ -16,3 +16,10 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.13"
 resourceDirectory in Compile := baseDirectory.value / "src/main/resource"
 
 addCompilerPlugin("org.scalamacros" % "paradise" % "2.1.1" cross CrossVersion.full)
+
+// https://mvnrepository.com/artifact/org.apache.derby/derbycc
+libraryDependencies += "org.apache.derby" % "derby" % "10.14.2.0"
+
+// https://mvnrepository.com/artifact/org.scalikejdbc/scalikejdbc
+libraryDependencies += "org.scalikejdbc" %% "scalikejdbc" % "3.3.1"
+
