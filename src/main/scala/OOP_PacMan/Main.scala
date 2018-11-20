@@ -10,9 +10,14 @@ import javafx.{scene => jfxs}
 import scalafx.scene.media.Media
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
+import Database.Database
+import OOP_PacMan.controller.PlayerPageController
+import User.Players
+import scalafx.collections.ObservableBuffer
 
 object Main extends JFXApp {
 
+  Database.setupDB()
   val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
   val loader = new FXMLLoader(null, NoDependencyResolver)
   loader.load(rootResource)
@@ -29,6 +34,10 @@ object Main extends JFXApp {
       stylesheets add getClass.getResource("style/Style.css").toExternalForm
     }
   }
+
+  val Userlist = new ObservableBuffer[Players]()
+
+  Userlist ++= Players.getAllUsers
 
   //introduction page
   val resource = getClass.getResourceAsStream("view/Introduction.fxml")
@@ -55,11 +64,40 @@ object Main extends JFXApp {
 
   //show high score page
   def showHighScore():Unit ={
-    val resource = getClass.getResourceAsStream("view/HighScores.fxml")
+    val resource = getClass.getResourceAsStream("view/HighScore.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
-    val roots2 = loader.getRoot[jfxs.layout.VBox]
+    val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
     stage.scene().setRoot(roots2)
+  }
+
+  def backToMain():Unit ={
+    val resource = getClass.getResourceAsStream("view/MainMenu.fxml")
+    val loader = new FXMLLoader(null, NoDependencyResolver)
+    loader.load(resource);
+    val roots2 = loader.getRoot[jfxs.layout.BorderPane]
+    stage.scene().setRoot(roots2)
+  }
+
+  def showAddNew(players: Players):Boolean = {
+      val resource = getClass.getResourceAsStream("view/PlayerPage.fxml")
+      val loader = new FXMLLoader(null, NoDependencyResolver)
+      loader.load(resource);
+      val roots2  = loader.getRoot[jfxs.Parent]
+      val control = loader.getController[PlayerPageController#Controller]
+
+    val dialog = new Stage() {
+      initModality(Modality.APPLICATION_MODAL)
+      initOwner(stage)
+      scene = new Scene {
+        root = roots2
+        stylesheets add getClass.getResource("style/Style.css").toExternalForm
+      }
+    }
+    control.dialogStage = dialog
+    control.players = players
+    dialog.showAndWait()
+    control.okClicked
   }
 
 
