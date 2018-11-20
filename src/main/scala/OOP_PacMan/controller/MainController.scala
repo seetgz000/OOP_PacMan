@@ -1,6 +1,7 @@
 package OOP_PacMan.controller
 
 import OOP_PacMan.Main
+import User.Players
 import scalafx.event.ActionEvent
 import scalafxml.core.macros.sfxml
 
@@ -18,4 +19,5 @@ class MainController {
   def startIntro(action:ActionEvent)={
     Main.showIntroduction()
   }
+
 }
