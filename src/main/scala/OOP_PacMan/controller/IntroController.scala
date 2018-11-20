@@ -24,7 +24,7 @@ class IntroController(
 
 
   def closeIntro(action:ActionEvent)={
-    Main.closeIntroduction()
+    Main.backToMain()
   }
 
 }

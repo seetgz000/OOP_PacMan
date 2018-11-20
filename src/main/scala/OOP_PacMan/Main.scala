@@ -37,7 +37,16 @@ object Main extends JFXApp {
   val introRoot = introLoader.getRoot[jfxs.Parent]
 
   def showIntroduction():Unit ={
-    roots.setCenter(introRoot)
+    stage.scene().setRoot(introRoot)
+  }
+
+  //back to main menu
+  def backToMain():Unit ={
+    val resource = getClass.getResourceAsStream("view/MainMenu.fxml")
+    val loader = new FXMLLoader(null, NoDependencyResolver)
+    loader.load(resource);
+    val roots2 = loader.getRoot[jfxs.layout.BorderPane]
+    stage.scene().setRoot(roots2)
   }
 
   def closeIntroduction()={
