@@ -1,5 +1,4 @@
 package OOP_PacMan
-import java.io.File
 
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
@@ -7,7 +6,6 @@ import scalafx.scene.{Parent, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
-import scalafx.scene.media.Media
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
@@ -21,7 +19,7 @@ object Main extends JFXApp {
   val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
   val loader = new FXMLLoader(null, NoDependencyResolver)
   loader.load(rootResource)
-  val roots = loader.getRoot[jfxs.layout.BorderPane]
+  val roots = loader.getRoot[jfxs.layout.Pane]
   stage = new PrimaryStage {
     title = "Pac Man"
     maxWidth = 400
@@ -38,20 +36,6 @@ object Main extends JFXApp {
   val Userlist = new ObservableBuffer[Players]()
 
   Userlist ++= Players.getAllUsers
-
-  //introduction page
-  val resource = getClass.getResourceAsStream("view/Introduction.fxml")
-  val introLoader = new FXMLLoader(null, NoDependencyResolver)
-  introLoader.load(resource);
-  val introRoot = introLoader.getRoot[jfxs.Parent]
-
-  def showIntroduction():Unit ={
-    roots.setCenter(introRoot)
-  }
-
-  def closeIntroduction()={
-    roots.getChildren.remove(introRoot)
-  }
 
   //play game page
   def playGame(): Unit = {
@@ -74,11 +58,7 @@ object Main extends JFXApp {
   }
 
   def backToMain():Unit ={
-    val resource = getClass.getResourceAsStream("view/MainMenu.fxml")
-    val loader = new FXMLLoader(null, NoDependencyResolver)
-    loader.load(resource);
-    val roots2 = loader.getRoot[jfxs.layout.BorderPane]
-    stage.scene().setRoot(roots2)
+    stage.scene().setRoot(roots)
   }
 
   def showAddNew(players: Players):Boolean = {
