@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.UserController">
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" prefHeight="150.0" prefWidth="407.0" styleClass="font-Title-HighScore" stylesheets="@../style/Style.css" text="HIGH SCORES" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+      <TableView layoutX="17.0" layoutY="113.0" prefHeight="351.0" prefWidth="376.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="182.0" text="Name" />
+          <TableColumn fx:id="scoreColumn" minWidth="0.0" prefWidth="193.0" text="Score" />
+        </columns>
+      </TableView>
+        <Button layoutX="165.0" layoutY="495.0" mnemonicParsing="false" styleClass="font-HighScore" stylesheets="@../style/Style.css" text="BACK" />
+    </children>
+</AnchorPane>
