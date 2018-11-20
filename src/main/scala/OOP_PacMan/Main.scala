@@ -50,7 +50,7 @@ object Main extends JFXApp {
 
   //show high score page
   def showHighScore():Unit ={
-    val resource = getClass.getResourceAsStream("view/HighScore.fxml")
+    val resource = getClass.getResourceAsStream("view/HighScores.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.layout.AnchorPane]

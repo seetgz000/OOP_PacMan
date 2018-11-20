@@ -57,8 +57,8 @@ class UserController (
       val alert = new Alert(AlertType.Warning){
         initOwner(Main.stage)
         title       = "No Selection"
-        headerText  = "No Person Selected"
-        contentText = "Please select a person in the table."
+        headerText  = "No Player Selected"
+        contentText = "Please select a player in the scoreboard"
       }.showAndWait()
     }
   }
