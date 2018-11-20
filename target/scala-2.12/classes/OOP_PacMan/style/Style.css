@@ -6,15 +6,25 @@
 	-fx-font-family: 'Fleftex';
 }
 
+//we can use this for all buttons in the game probably...
 .title-button{
+	-fx-background-image: url("../image/button.png");
 	-fx-font-size: 12px;
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-background-repeat: no-repeat;
 }
 
-<<<<<<< HEAD
-//gameplay page
-=======
+.title-button:pressed{
+	-fx-background-image: url("../image/buttonSelected.png");
+	-fx-font-size: 12px;
+	-fx-background-color: transparent;
+	-fx-text-fill: black;
+	-fx-background-repeat: no-repeat;
+
+}
+
 //instruction page
->>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 . instruction-border{
     -fx-border-color: yellow ;
     -fx-border-width: 2;
@@ -57,67 +67,10 @@
 	-fx-font-size: 16px;
 }
 
-<<<<<<< HEAD
-.font-name{
-	-fx-font-family: 'Fleftex';
-	-fx-font-size: 28px;
-	-fx-text-fill:white;
-}
 
-.text-field {
-    -fx-background-color: #a9a9a9 , white , white;
-    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
-}
-
-.text-field:focused {
-    -fx-background-color: #a9a9a9 , white , white;
-    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
-}
-=======
-
->>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 
 #title{
 	-fx-font-size: 50px;
 }
 
-<<<<<<< HEAD
-.player-Table{
-    -fx-font-family: 'Fleftex';
-	-fx-font-size: 16px;
-	-fx-background-color:transparent;
-}
-
-.table-column {
-    -fx-text-alignment: center;
-    -fx-alignment: CENTER;
-    -fx-background-color:black;
-    -fx-text-fill:white
-}
-
-
-.table-view .column-header .label {
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-border-color: white;
-}
-
-.table-view *.scroll-bar:horizontal *.increment-arrow,
-.table-view *.scroll-bar:horizontal *.decrement-arrow {
-    -fx-background-color: null;
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
-    -fx-shape: null;
-}
-
-.table-view *.scroll-bar:horizontal *.increment-button,
-.table-view *.scroll-bar:horizontal *.decrement-button {
-    -fx-background-color: null;
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
-}
-=======
->>>>>>> 1f4aeb5fad12414da8ea3b462cd9a5dada274c97
 
