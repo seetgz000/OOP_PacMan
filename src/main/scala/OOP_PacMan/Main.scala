@@ -55,11 +55,13 @@ object Main extends JFXApp {
 
   //play game page
   def playGame(): Unit = {
-    val resource = getClass.getResourceAsStream("view/PlayGame.fxml")
+    val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
     stage.scene().setRoot(roots2)
+    stage.setMaxWidth(423)
+    stage.setMinWidth(423)
   }
 
   //show high score page
