@@ -54,7 +54,7 @@
       </StackPane>
       <BorderPane id="background" maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css">
          <bottom>
-            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="251.0" prefWidth="198.0" BorderPane.alignment="CENTER">
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="269.0" prefWidth="198.0" BorderPane.alignment="CENTER">
                <children>
                   <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#startGame" prefHeight="60.0" prefWidth="140.0" text="Start">
                      <font>
