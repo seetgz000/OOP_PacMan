@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c751e138-42b2-4649-8f63-ddd5d4afafda" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/myDB/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/myDB/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDB/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/myDB/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/myDB/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myDB/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/myDB/seg0/c490.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/oop_pacman-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/oop_pacman-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/oop_pacman-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/oop_pacman-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-compile-internal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-compile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-optional.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-provided.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-runtime-internal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-runtime.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-scala-tool.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-test-internal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-oop_pacman-build-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Game.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Game.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Maze/Maze.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/controller/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/style/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/style/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/view/HighScores.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/view/HighScores.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/view/Introduction.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/view/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/OOP_PacMan/view/MainMenu.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -23,83 +51,181 @@
     <session id="-1515206238">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="fxml" value="1" />
           <entry key="iml" value="2" />
+          <entry key="java" value="3" />
           <entry key="name" value="1" />
-          <entry key="scala" value="3" />
+          <entry key="scala" value="38" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Scala" value="3" />
-          <entry key="XML" value="3" />
+          <entry key="Scala" value="38" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="sbtShell" value="14" />
+          <entry key="scala" value="2227" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="Scala" value="2227" />
           <entry key="sbtShell" value="14" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/movePlease.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/.name">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="328">
+                  <caret line="68" column="38" lean-forward="true" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+                  <folding>
+                    <element signature="e#20#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-340">
+                  <caret line="31" selection-start-line="31" selection-end-line="31" />
+                  <folding>
+                    <element signature="e#31#69#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/User/Players.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="10" selection-start-line="10" selection-end-line="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resource/OOP_PacMan/view/PlayGame3.fxml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="8" column="124" selection-start-line="8" selection-start-column="124" selection-end-line="8" selection-end-column="124" />
+                </state>
+              </provider>
+              <provider editor-type-id="JavaFX-Scene-Builder" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/MainController.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="33" selection-start-line="33" selection-end-line="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/movePlease.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5610">
+                  <caret line="341" column="35" selection-start-line="341" selection-start-column="35" selection-end-line="341" selection-end-column="35" />
+                  <folding>
+                    <element signature="e#20#60#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Game.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="393">
+                  <caret line="79" column="3" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="79" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#20#49#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/testCanvas.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="385">
+                  <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="79" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Object" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>canwidth</find>
+      <find>showHighScore</find>
+      <find>canvas</find>
+      <find>pacmanY</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/scala/Game.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/MainController.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/Movement.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Game.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/movePlease.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -136,6 +262,30 @@
               <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -145,6 +295,33 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="OOP_PacMan" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oop_pacman" type="b2602c69:ProjectViewProjectNode" />
@@ -159,12 +336,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542719059886" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542821230682" />
+    <property name="last_opened_file_path" value="F:/Degree/Object-Oriented Programming/practical12" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="OOP_PacMan" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\Degree\Object-Oriented Programming\Assignment\OOP_PacMan\src\main\scala" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -179,6 +364,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="OOP_PacMan.Game" />
+      <module name="OOP_PacMan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="OOP_PacMan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="OOP_PacMan.Main" />
       <module name="OOP_PacMan" />
@@ -205,14 +403,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="testCanvas" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="OOP_PacMan.testCanvas" />
+      <module name="OOP_PacMan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="OOP_PacMan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.ZenPongMain" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Game" />
+      <item itemvalue="Application.testCanvas" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.testCanvas" />
         <item itemvalue="Application.ZenPongMain" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +486,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2624161" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -279,8 +494,8 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.32907802" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49328858" weight="0.27801418" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -288,10 +503,10 @@
       <window_info anchor="bottom" id="Build" order="7" weight="0.32907802" />
       <window_info anchor="bottom" id="SBT Console" order="8" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="9" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49798658" visible="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50201344" side_tool="true" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49597314" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5067114" side_tool="true" weight="0.27801418" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4986577" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" sideWeight="0.49530202" visible="true" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -304,37 +519,37 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="Image Layers" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24966443" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="0" weight="0.32907802" />
-      <window_info anchor="bottom" id="SBT Console" order="1" />
-      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.32907802" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="sbt" order="1" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="right" id="Gradle" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2590604" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49328858" visible="true" weight="0.27801418" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="SBT Console" order="8" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="9" sideWeight="0.49932885" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49597314" weight="0.32907802" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5067114" side_tool="true" visible="true" weight="0.27801418" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49530202" weight="0.32907802" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="sbt" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -353,34 +568,163 @@
         <state relative-caret-position="-266" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Game.scala">
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Game.scala" />
+    <entry file="file://$PROJECT_DIR$/.idea/.name">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/animation/Animation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="226">
+          <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalafx/scalafx_2.12/srcs/scalafx_2.12-8.0.181-R13-sources.jar!/scalafx/scene/paint/LinearGradient.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="48" column="121" selection-start-line="48" selection-start-column="121" selection-end-line="48" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Maze/Maze.scala" />
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalafx/scalafx_2.12/srcs/scalafx_2.12-8.0.181-R13-sources.jar!/scalafx/scene/Scene.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="317" column="6" selection-start-line="317" selection-start-column="6" selection-end-line="317" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalafx/scalafxml-core-sfx8_2.12/srcs/scalafxml-core-sfx8_2.12-0.4-sources.jar!/scalafxml/core/FXMLLoader.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayerPageController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/Movement.scala" />
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalafx/scalafx_2.12/srcs/scalafx_2.12-8.0.181-R13-sources.jar!/scalafx/scene/Node.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="670" column="6" selection-start-line="670" selection-start-column="6" selection-end-line="670" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalafx/scalafx_2.12/srcs/scalafx_2.12-8.0.181-R13-sources.jar!/scalafx/beans/property/DoubleProperty.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="8230" column="33" selection-start-line="8230" selection-start-column="33" selection-end-line="8230" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Database/Database.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#17#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scalafx/scalafx_2.12/srcs/scalafx_2.12-8.0.181-R13-sources.jar!/scalafx/application/AppHelper.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/User/Players.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/OOP_PacMan/view/PlayGame3.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="124" selection-start-line="8" selection-start-column="124" selection-end-line="8" selection-end-column="124" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/MainController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/movePlease.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="5610">
+          <caret line="341" column="35" selection-start-line="341" selection-start-column="35" selection-end-line="341" selection-end-column="35" />
+          <folding>
+            <element signature="e#20#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="1206" column="40" selection-start-line="1206" selection-start-column="40" selection-end-line="1206" selection-end-column="40" />
+          <folding>
+            <element signature="e#44302#44303#0" expanded="true" />
+            <element signature="e#44343#44344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Game.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="79" column="3" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="79" selection-end-column="3" />
+          <folding>
+            <element signature="e#20#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#31#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/testCanvas.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="79" selection-end-column="7" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="328">
+          <caret line="68" column="38" lean-forward="true" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
