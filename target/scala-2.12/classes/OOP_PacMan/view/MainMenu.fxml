@@ -9,72 +9,69 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="background" maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.MainController">
-   <top>
-      <Label id="title" prefHeight="81.0" prefWidth="225.0" styleClass="font" text="Pacman" textFill="#e5ff20" BorderPane.alignment="BOTTOM_CENTER">
-         <font>
-            <Font size="89.0" />
-         </font>
-         <BorderPane.margin>
-            <Insets top="50.0" />
-         </BorderPane.margin>
-      </Label>
-   </top>
-   <center>
-      <TilePane alignment="CENTER" prefHeight="184.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="10.0" />
-         </BorderPane.margin>
-         <children>
-            <HBox fx:id="transition1" alignment="CENTER_LEFT" prefHeight="172.0" prefWidth="399.0">
-               <children>
-                  <ImageView fx:id="pacmanV" fitHeight="128.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="ghostV" fitHeight="128.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </HBox>
-         </children>
-      </TilePane>
-   </center>
-   <bottom>
-      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="244.0" prefWidth="198.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" onAction="#startGame" prefHeight="48.0" prefWidth="129.0" text="Start">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="font" />
-                  <String fx:value="title-button" />
-               </styleClass>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#startIntro" prefHeight="48.0" prefWidth="129.0" text="Introduction">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="font" />
-                  <String fx:value="title-button" />
-               </styleClass>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#showHighScore" prefHeight="48.0" prefWidth="129.0" text="High Score">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="font" />
-                  <String fx:value="title-button" />
-               </styleClass>
-            </Button>
-         </children>
-      </VBox>
-   </bottom>
+<BorderPane id="background" maxHeight="600.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.MainController">
+    <top>
+        <Label id="title" prefHeight="81.0" prefWidth="225.0" styleClass="font" text="Pacman" textFill="#e5ff20" BorderPane.alignment="BOTTOM_CENTER">
+            <font>
+                <Font size="89.0" />
+            </font>
+            <BorderPane.margin>
+                <Insets top="50.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+    <center>
+        <TilePane alignment="CENTER" prefHeight="184.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+            <children>
+                <HBox fx:id="transition1" alignment="CENTER_LEFT" prefHeight="172.0" prefWidth="399.0">
+                    <children>
+                        <ImageView fx:id="pacmanV" fitHeight="128.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="ghostV" fitHeight="128.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                    </children>
+                </HBox>
+            </children>
+        </TilePane>
+    </center>
+    <bottom>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="244.0" prefWidth="198.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#startGame" prefHeight="60.0" prefWidth="140.0" text="Start">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="font" />
+                        <String fx:value="title-button" />
+                    </styleClass>
+                </Button>
+                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#startIntro" prefHeight="60.0" prefWidth="140.0" text="Introduction">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="font" />
+                        <String fx:value="title-button" />
+                    </styleClass>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#showHighScore" prefHeight="60.0" prefWidth="140.0" text="High Score">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <styleClass>
+                        <String fx:value="font" />
+                        <String fx:value="title-button" />
+                    </styleClass>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </bottom>
 </BorderPane>

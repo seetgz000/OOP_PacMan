@@ -1,35 +1,19 @@
 package OOP_PacMan
 
 import javafx.animation.Animation.Status
-
 import scalafx.Includes._
-
 import scalafx.animation.{KeyFrame, Timeline}
-
 import scalafx.application.JFXApp
-
 import scalafx.application.JFXApp.PrimaryStage
-
 import scalafx.beans.property.{BooleanProperty, DoubleProperty}
-
 import scalafx.scene.control.Button
-
 import scalafx.scene.input.KeyCode
-
 import scalafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
-
 import scalafx.scene.shape.{Circle, Rectangle}
-
 import scalafx.scene.{Cursor, Group, Scene}
-
-
-
 import scala.language.postfixOps
 
-
-
 object ZenPongMain extends JFXApp {
-
 
 
   /** The center points of the moving ball */
@@ -39,17 +23,14 @@ object ZenPongMain extends JFXApp {
   val centerBallY = new DoubleProperty
 
 
-
   /** The Y coordinate of the left paddle */
 
   val leftPaddleY = new DoubleProperty
 
 
-
   /** The Y coordinate of the right paddle */
 
   val rightPaddleY = new DoubleProperty
-
 
 
   /** The drag anchor for left and right paddles */
@@ -63,11 +44,9 @@ object ZenPongMain extends JFXApp {
   var movingRight = true
 
 
-
   /** Controls whether the ball is moving down */
 
   var movingDown = true
-
 
 
   /** The initial translateY property for the left and right paddles */
@@ -75,7 +54,6 @@ object ZenPongMain extends JFXApp {
   var initLeftPaddleTranslateY: Double = _
 
   var initRightPaddleTranslateY: Double = _
-
 
 
   /** The moving ball */
@@ -91,7 +69,6 @@ object ZenPongMain extends JFXApp {
     centerY <== centerBallY
 
   }
-
 
 
   /** The left and right paddles */
@@ -161,7 +138,6 @@ object ZenPongMain extends JFXApp {
   }
 
 
-
   /** The walls */
 
   val topWall = new Rectangle {
@@ -213,13 +189,11 @@ object ZenPongMain extends JFXApp {
   }
 
 
-
   /**
     * Controls whether the startButton is visible
     */
 
   val startVisible = BooleanProperty(true)
-
 
 
   /** The animation of the ball */
@@ -249,7 +223,6 @@ object ZenPongMain extends JFXApp {
   }
 
 
-
   val startButton = new Button {
 
     layoutX() = 225
@@ -273,7 +246,6 @@ object ZenPongMain extends JFXApp {
       }
 
   }
-
 
 
   /** The Group containing all of the walls, paddles, and ball. This also allows
@@ -333,7 +305,6 @@ object ZenPongMain extends JFXApp {
   }
 
 
-
   /** Sets the initial starting positions of the ball and paddles */
 
   def initialize() {
@@ -351,7 +322,6 @@ object ZenPongMain extends JFXApp {
     pongComponents.requestFocus()
 
   }
-
 
 
   /** Checks whether or not the ball has collided with either the paddles,
@@ -386,7 +356,6 @@ object ZenPongMain extends JFXApp {
   }
 
 
-
   stage = new PrimaryStage {
 
     title = "ZenPong Example"
@@ -414,7 +383,6 @@ object ZenPongMain extends JFXApp {
     }
 
   }
-
 
 
   initialize()
