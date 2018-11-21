@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.UserController">
+<AnchorPane prefHeight="700.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.UserController">
     <children>
         <SplitPane dividerPositions="0.8445" orientation="VERTICAL" prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css">
             <items>
@@ -27,24 +27,36 @@
                         </TableView>
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="185.0" prefWidth="400.0">
                     <children>
-                        <HBox layoutX="-34.0" layoutY="31.0" prefHeight="69.0" prefWidth="434.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="89.0" prefWidth="400.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#backtoMain" prefHeight="39.0" prefWidth="99.0" styleClass="font" text="BACK">
-                                    <HBox.margin>
-                                        <Insets left="55.0" top="10.0" />
-                                    </HBox.margin>
-                                </Button>
-                                <Button mnemonicParsing="false" onAction="#handleNewPlayer" prefHeight="39.0" prefWidth="99.0" styleClass="font" text="NEW">
+                                <Button mnemonicParsing="false" onAction="#backtoMain" prefHeight="39.0" prefWidth="99.0" text="BACK">
                                     <HBox.margin>
                                         <Insets left="20.0" top="10.0" />
                                     </HBox.margin>
+                           <styleClass>
+                              <String fx:value="font" />
+                              <String fx:value="title-button" />
+                           </styleClass>
                                 </Button>
-                                <Button mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="39.0" prefWidth="99.0" styleClass="font" text="DELETE">
+                                <Button mnemonicParsing="false" onAction="#handleNewPlayer" prefHeight="39.0" prefWidth="99.0" text="NEW">
                                     <HBox.margin>
                                         <Insets left="20.0" top="10.0" />
                                     </HBox.margin>
+                           <styleClass>
+                              <String fx:value="font" />
+                              <String fx:value="title-button" />
+                           </styleClass>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#handleDeletePerson" prefHeight="39.0" prefWidth="99.0" text="DELETE">
+                                    <HBox.margin>
+                                        <Insets left="20.0" top="10.0" />
+                                    </HBox.margin>
+                           <styleClass>
+                              <String fx:value="font" />
+                              <String fx:value="title-button" />
+                           </styleClass>
                                 </Button>
                             </children>
                         </HBox>
