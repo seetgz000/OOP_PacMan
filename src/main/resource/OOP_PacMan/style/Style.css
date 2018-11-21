@@ -6,8 +6,19 @@
 	-fx-font-family: 'Fleftex';
 }
 
+//we can use this for all buttons in the game probably..., for consistency sake
 .title-button{
+	-fx-background-image: url("../image/button.png");
 	-fx-font-size: 12px;
+	-fx-background-color: transparent;
+	-fx-text-fill: white;
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: 100% 100%;
+}
+
+.title-button:pressed{
+	-fx-background-image: url("../image/buttonSelected.png");
+	-fx-text-fill: black;
 }
 
 //instruction page
@@ -43,6 +54,14 @@
 	-fx-font-size: 42px;
 }
 
+#quit-button{
+    -fx-background-image: url("../image/quit-button.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
+
+//high score css
 .font-TableTitle-HighScore{
 	-fx-font-family: 'Fleftex';
 	-fx-font-size: 24px;
@@ -53,10 +72,108 @@
 	-fx-font-size: 16px;
 }
 
+.font-name {
+    -fx-font-family: 'Fleftex';
+	-fx-font-size: 20px;
+	-fx-font-fill:white
+}
 
 
 #title{
 	-fx-font-size: 50px;
 }
 
+//for table of high score
+.table-view {
+    -fx-base: black;
+    -fx-control-inner-background: black;
+    -fx-background-color: black;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
 
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 30;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 18pt;
+    -fx-font-family: 'Fleftex';
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-selection-bar: white;
+    -fx-selection-bar-non-focused:white;
+}
+
+.table-view .table-column {
+     -fx-alignment: center;
+     -fx-font-family: 'Fleftex';
+}
+
+
+.split-pane:vertical > .split-pane-divider {
+    -fx-border-color: transparent black transparent black;
+    -fx-background-color: transparent, derive(black,25%);
+}
+
+.split-pane {
+    -fx-padding: 0 0 0 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+//for alert window ( affects all, just remove this section to remove alert css)
+.dialog-pane{
+    -fx-background-color: black;
+    -fx-font-family: 'Fleftex';
+}
+
+.dialog-pane .label{
+    -fx-text-fill: white
+}
+
+.dialog-pane .button{
+    	-fx-background-image: url("../image/button.png");
+    	-fx-background-color: transparent;
+    	-fx-text-fill: white;
+    	-fx-background-repeat: no-repeat;
+    	-fx-background-size: 100% 100%;
+}
+
+.dialog-pane .button:pressed{
+    	-fx-background-image: url("../image/buttonSelected.png");
+    	-fx-text-fill: black;
+    	-fx-background-repeat: no-repeat;
+    	-fx-background-size: 100% 100%;
+}
+
+.dialog-pane:header *.header-panel {
+    -fx-background-color:black;
+}
