@@ -37,6 +37,11 @@ object Main extends JFXApp {
 
   Userlist ++= Players.getAllUsers
 
+  //close game
+  def closeGame()={
+    stage.close()
+  }
+
   //play game page
   def playGame(): Unit = {
     val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")

@@ -22,6 +22,14 @@ class MainController(
                       private val introRoot:StackPane
                     ) {
 
+  val closeBtnImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/close.png"))
+  val directionalImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/keyboard.png"))
+  val escapeImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
+
+  val ghost = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/4ghost-img.png"))
+  val pacman = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif"))
+
+  //added functions for buttons
   def startGame(action: ActionEvent)={
     Main.playGame()
   }
@@ -30,11 +38,16 @@ class MainController(
     Main.showHighScore()
   }
 
+  //for introduction pop up
   def startIntro(action:ActionEvent)={
     introRoot.toFront()//time to bring it out
   }
   def closeIntro(action:ActionEvent)={
     introRoot.toBack()//hide it again as its closed
+  }
+
+  def closeGame(actionEvent: ActionEvent) ={
+    Main.closeGame()
   }
 
   // animation for pacman chasing ghosts
@@ -45,19 +58,13 @@ class MainController(
     )
   }
 
-  val closeBtnImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/close.png"))
-  val directionalImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/keyboard.png"))
-  val escapeImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
-
+  //set image for introduction pop up
   close.setImage(closeBtnImg)
   directionalKeys.setImage(directionalImg)
   escKey.setImage(escapeImg)
 
-
-  val ghost = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/4ghost-img.png"))
+  //set image for animation at main menu
   ghostV.setImage(ghost)
-
-  val pacman = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif"))
   pacmanV.setImage(pacman)
 
   val transition = new PathTransition(Duration(2500), path, transition1) {
