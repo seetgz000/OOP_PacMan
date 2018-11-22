@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -75,6 +76,9 @@
                   <Insets top="10.0" />
                </BorderPane.margin>
             </GridPane>
+              <center>
+                <FlowPane fx:id="flow" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+             </center>
          </top>
       </BorderPane>
    </children>
