@@ -2,6 +2,7 @@ package OOP_PacMan.controller
 
 import java.io.{File, FileInputStream}
 
+import OOP_PacMan.Main
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
@@ -12,6 +13,7 @@ import scalafx.scene.control.Label
 import scalafx.scene.effect.DropShadow
 import scalafx.scene.image.{Image, ImageView}
 import javafx.scene.input.KeyCode
+import scalafx.event.ActionEvent
 import scalafx.scene.layout._
 import scalafx.scene.paint.Color
 import scalafx.scene.text.{Font, Text}
@@ -22,16 +24,16 @@ import scalafxml.core.macros.sfxml
 class PlayGameController(
                           private var flow: FlowPane,
                           private var anchorPane: AnchorPane,
-                          private var canvas: Canvas,
                           private var pane: Pane,
                           private var hbox: HBox,
+                          private val escPause : ImageView
                         )  {
 
   var map1 = Array(
     //                      1 1 1 1 1 1 1 1
     //    1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
     Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), // 1
-    Array(1,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 2
+    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 2
     Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 3
     Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 4
     Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 5
@@ -78,7 +80,6 @@ class PlayGameController(
   flow.hgap = 1
 
   flow.setMinWidth((imageW+1)*length)
-  flow.setPrefHeight(700)
 
 //  var groundList :Node
 //  var wallList :Node
@@ -119,33 +120,14 @@ class PlayGameController(
       }
     }
   }
-  //  canvas.onKeyPressed = k => k.getCode match {
-  //
-  //    case KeyCode.W =>
-  //
-  //      pacmanY = pacmanY - 6
-  //      println(pacmanY)
-  //
-  //
-  //    case KeyCode.A =>
-  //
-  //      pacmanX = pacmanX - 6
-  //
-  //    case KeyCode.S =>
-  //
-  //      pacmanY = pacmanY + 6
-  //
-  //    case KeyCode.D =>
-  //
-  //      pacmanX = pacmanX + 6
-  //
-  //    case _ =>
-  //
-  //  }
 
 
-  def getCanvasWidth():Int ={
-    canvas.width.toInt
+  // pause game
+  val escPauseImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
+  escPause.setImage(escPauseImg)
+
+  def quitGame(action:ActionEvent)={
+    Main.backToMain()
   }
 
 

@@ -4,7 +4,7 @@ import java.io.File
 
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
-import scalafx.scene.{Group, Node, Parent, Scene}
+import scalafx.scene.{Group, Parent, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
@@ -57,9 +57,6 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
     stage.setMaxWidth(423)
     stage.setMinWidth(423)
-
-    showGameCanvas(roots2)
-
   }
 
   def showGameCanvas(root: AnchorPane): Unit = {
@@ -129,6 +126,7 @@ object Main extends JFXApp {
     }
     root.getChildren.add(group)
   }
+
 
 
 

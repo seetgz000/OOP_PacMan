@@ -9,15 +9,14 @@ import scalafx.application.JFXApp.PrimaryStage
 import scalafx.beans.property.DoubleProperty
 import scalafx.scene.image.{Image, ImageView}
 import scalafx.scene.input.KeyCode
-import scalafx.scene.text.Font
 import scalafx.scene.{Group, ImageCursor, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 
 object Game extends JFXApp {
-  val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
+  val rootResource = getClass.getResourceAsStream("view/PlayGame3.fxml")
   val loader = new FXMLLoader(null, NoDependencyResolver)
   loader.load(rootResource)
-  val roots = loader.getRoot[jfxs.layout.Pane]
+  val roots = loader.getRoot[jfxs.layout.AnchorPane]
 
   /** Change Cursor Icon */
   val pacmanCursor = new Image(getClass.getResource("image/pacmanGIF(fast).gif").toString)
@@ -35,7 +34,7 @@ object Game extends JFXApp {
   var initPacmanTranslateY: Double = _
 
   /** Initialize Pacman */
-  val pacmanImg = new Image(getClass.getResource("image/pacmanGIF(fast).gif").toString)
+  val pacmanImg = new Image(getClass.getResource("image/pacman-open.png").toString)
   val pacman = new ImageView(pacmanImg) {
     fitWidth = 40
     preserveRatio = true
@@ -85,8 +84,6 @@ object Game extends JFXApp {
       root = roots
       cursor = new ImageCursor(pacmanCursor)
       content = pacmanComponent
-      Font.loadFont(getClass.getResourceAsStream("font/Fleftex_M.ttf"), 16)
-      stylesheets add getClass.getResource("style/Style.css").toExternalForm
     }
     title = "PacMan"
   }
