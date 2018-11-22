@@ -1,5 +1,4 @@
 package OOP_PacMan
-import java.io.File
 
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
@@ -7,16 +6,20 @@ import scalafx.scene.{Parent, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
-import scalafx.scene.media.Media
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
+import Database.Database
+import OOP_PacMan.controller.GameOverController
+import User.Players
+import scalafx.collections.ObservableBuffer
 
 object Main extends JFXApp {
 
+  Database.setupDB()
   val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
   val loader = new FXMLLoader(null, NoDependencyResolver)
   loader.load(rootResource)
-  val roots = loader.getRoot[jfxs.layout.BorderPane]
+  val roots = loader.getRoot[jfxs.layout.Pane]
   stage = new PrimaryStage {
     title = "Pac Man"
     maxWidth = 400
@@ -30,36 +33,19 @@ object Main extends JFXApp {
     }
   }
 
-  //introduction page
-  val resource = getClass.getResourceAsStream("view/Introduction.fxml")
-  val introLoader = new FXMLLoader(null, NoDependencyResolver)
-  introLoader.load(resource);
-  val introRoot = introLoader.getRoot[jfxs.Parent]
+  val Userlist = new ObservableBuffer[Players]()
 
-  def showIntroduction():Unit ={
-    stage.scene().setRoot(introRoot)
-  }
-
-  //back to main menu
-  def backToMain():Unit ={
-    val resource = getClass.getResourceAsStream("view/MainMenu.fxml")
-    val loader = new FXMLLoader(null, NoDependencyResolver)
-    loader.load(resource);
-    val roots2 = loader.getRoot[jfxs.layout.BorderPane]
-    stage.scene().setRoot(roots2)
-  }
-
-  def closeIntroduction()={
-    roots.getChildren.remove(introRoot)
-  }
+  Userlist ++= Players.getAllUsers
 
   //play game page
   def playGame(): Unit = {
-    val resource = getClass.getResourceAsStream("view/PlayGame.fxml")
+    val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
     stage.scene().setRoot(roots2)
+    stage.setMaxWidth(423)
+    stage.setMinWidth(423)
   }
 
   //show high score page
@@ -67,8 +53,34 @@ object Main extends JFXApp {
     val resource = getClass.getResourceAsStream("view/HighScores.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
-    val roots2 = loader.getRoot[jfxs.layout.VBox]
+    val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
     stage.scene().setRoot(roots2)
+  }
+
+  //back to main page
+  def backToMain():Unit ={
+    stage.scene().setRoot(roots)
+  }
+
+  def showAddNew(players: Players):Boolean = {
+      val resource = getClass.getResourceAsStream("view/GameOver.fxml")
+      val loader = new FXMLLoader(null, NoDependencyResolver)
+      loader.load(resource);
+      val roots2  = loader.getRoot[jfxs.Parent]
+      val control = loader.getController[GameOverController#Controller]
+
+    val dialog = new Stage() {
+      initModality(Modality.APPLICATION_MODAL)
+      initOwner(stage)
+      scene = new Scene {
+        root = roots2
+        stylesheets add getClass.getResource("style/Style.css").toExternalForm
+      }
+    }
+    control.dialogStage = dialog
+    control.players = players
+    dialog.showAndWait()
+    control.okClicked
   }
 
 

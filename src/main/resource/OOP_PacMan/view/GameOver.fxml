@@ -7,19 +7,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.view.GameOver">
+<AnchorPane prefHeight="550.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.GameOverController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-2.0" prefHeight="150.0" prefWidth="400.0" styleClass="font-Title-GameOver" stylesheets="@../style/Style.css" text="GAME OVER" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="166.0" prefHeight="65.0" prefWidth="400.0" styleClass="font-GameOver" stylesheets="@../style/Style.css" text="SCORE: " textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="159.0" prefHeight="65.0" prefWidth="400.0" styleClass="font-GameOver" stylesheets="@../style/Style.css" text="SCORE: " textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="210.0" prefHeight="65.0" prefWidth="400.0" styleClass="font-GameOver" stylesheets="@../style/Style.css" text="xxxx" textFill="WHITE">
+      <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="203.0" prefHeight="65.0" prefWidth="400.0" styleClass="font-GameOver" stylesheets="@../style/Style.css" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -29,10 +29,14 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TextField alignment="CENTER" layoutX="42.0" layoutY="380.0" prefHeight="65.0" prefWidth="317.0" styleClass="font-GameOver" stylesheets="@../style/Style.css">
+      <TextField fx:id="name" alignment="CENTER" layoutX="42.0" layoutY="380.0" prefHeight="65.0" prefWidth="317.0" styleClass="font-GameOver" stylesheets="@../style/Style.css">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button layoutX="156.0" layoutY="460.0" mnemonicParsing="false" styleClass="font" stylesheets="@../style/Style.css" text="submit" />
+      <Button layoutX="142.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="47.0" prefWidth="116.0" stylesheets="@../style/Style.css" text="submit">
+         <styleClass>
+            <String fx:value="title-button" />
+            <String fx:value="font" />
+         </styleClass></Button>
    </children>
 </AnchorPane>
