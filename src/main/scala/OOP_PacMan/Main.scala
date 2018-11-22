@@ -53,6 +53,78 @@ object Main extends JFXApp {
     stage.setMinWidth(423)
   }
 
+  def showGameCanvas(root: AnchorPane): Unit = {
+
+    val group = new Group() {
+      /** Translation of Pacman */
+      val pacmanX = new DoubleProperty
+      val pacmanY = new DoubleProperty
+
+      /** Initialize Pacman */
+      val pacmanImg = new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif").toURI.toURL.toString)
+      val pacmanW = 20
+      val pacmanH = 20
+
+
+      val pacman = new ImageView(pacmanImg) {
+        fitWidth = pacmanW
+        preserveRatio = true
+        x = 25
+        y = 90
+        translateX <== pacmanX
+        translateY <== pacmanY
+      }
+      val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
+      val loader = new FXMLLoader(null, NoDependencyResolver)
+      loader.load(resource);
+      val playGameCtrl = loader.getController[PlayGameController#Controller]
+      val ground = playGameCtrl.ground
+      val wall = playGameCtrl.wall
+      val coin = playGameCtrl.coin
+      val map = playGameCtrl.map1
+      stage.scene().onKeyPressed = k => k.code match {
+
+        case KeyCode.W
+//          if !pacman.boundsInParent().intersects(playGameCtrl.groundList.boundsInLocal())
+          if !(pacmanY() <= 0)
+        =>
+
+          //        canvas.translateY = canvas.translateY.value - 6
+          pacmanY() = pacmanY.value - 6
+          print(pacmanX.value,pacmanY.value)
+        case KeyCode.A
+          //        canvas.translateX= canvas.translateX.value - 6
+          if !(pacmanX() <= 0)
+            =>
+          pacmanX() = pacmanX.value - 6
+          print(pacmanX.value,pacmanY.value)
+        case KeyCode.S
+          if !(pacmanY() >= 432)
+        =>
+          //        canvas.translateY = canvas.translateY.value + 6
+          pacmanY() = pacmanY.value + 6
+          print(pacmanX.value,pacmanY.value)
+        case KeyCode.D
+          if !(pacmanX() >= 336)
+        =>
+          //        canvas.translateX = canvas.translateX.value + 6
+          pacmanX() = pacmanX.value + 6
+          print(pacmanX.value,pacmanY.value)
+        case _ =>
+
+      }
+
+      children = List(
+        pacman
+      )
+    }
+    root.getChildren.add(group)
+  }
+
+
+
+
+
   //show high score page
   def showHighScore():Unit ={
     val resource = getClass.getResourceAsStream("view/HighScores.fxml")
@@ -86,6 +158,4 @@ object Main extends JFXApp {
     dialog.showAndWait()
     control.okClicked
   }
-
-
 }
