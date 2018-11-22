@@ -65,47 +65,60 @@ object Main extends JFXApp {
   def showGameCanvas(root: AnchorPane): Unit = {
 
     val group = new Group() {
-      /** Coordinate of Pacman */
+      /** Translation of Pacman */
       val pacmanX = new DoubleProperty
       val pacmanY = new DoubleProperty
 
       /** Initialize Pacman */
       val pacmanImg = new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif").toURI.toURL.toString)
-      val pacmanW = 40
-      val pacmanH = 40
+      val pacmanW = 20
+      val pacmanH = 20
 
 
       val pacman = new ImageView(pacmanImg) {
-        fitWidth = 40
+        fitWidth = pacmanW
         preserveRatio = true
-        x = 100
-        y = 100
+        x = 25
+        y = 90
         translateX <== pacmanX
         translateY <== pacmanY
       }
+      val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
+      val loader = new FXMLLoader(null, NoDependencyResolver)
+      loader.load(resource);
+      val playGameCtrl = loader.getController[PlayGameController#Controller]
+      val ground = playGameCtrl.ground
+      val wall = playGameCtrl.wall
+      val coin = playGameCtrl.coin
+      val map = playGameCtrl.map1
       stage.scene().onKeyPressed = k => k.code match {
 
-        case KeyCode.W =>
+        case KeyCode.W
+//          if !pacman.boundsInParent().intersects(playGameCtrl.groundList.boundsInLocal())
+          if !(pacmanY() <= 0)
+        =>
 
           //        canvas.translateY = canvas.translateY.value - 6
           pacmanY() = pacmanY.value - 6
-          print(pacmanX, pacmanY)
-
-        case KeyCode.A =>
+          print(pacmanX.value,pacmanY.value)
+        case KeyCode.A
           //        canvas.translateX= canvas.translateX.value - 6
+          if !(pacmanX() <= 0)
+            =>
           pacmanX() = pacmanX.value - 6
-          print(pacmanX, pacmanY)
-
-        case KeyCode.S =>
+          print(pacmanX.value,pacmanY.value)
+        case KeyCode.S
+          if !(pacmanY() >= 432)
+        =>
           //        canvas.translateY = canvas.translateY.value + 6
           pacmanY() = pacmanY.value + 6
-          print(pacmanX, pacmanY)
-
-        case KeyCode.D =>
+          print(pacmanX.value,pacmanY.value)
+        case KeyCode.D
+          if !(pacmanX() >= 336)
+        =>
           //        canvas.translateX = canvas.translateX.value + 6
           pacmanX() = pacmanX.value + 6
-          print(pacmanX, pacmanY)
-
+          print(pacmanX.value,pacmanY.value)
         case _ =>
 
       }
@@ -116,6 +129,8 @@ object Main extends JFXApp {
     }
     root.getChildren.add(group)
   }
+
+
 
 
   //show high score page

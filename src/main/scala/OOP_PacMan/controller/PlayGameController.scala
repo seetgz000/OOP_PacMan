@@ -2,16 +2,17 @@ package OOP_PacMan.controller
 
 import java.io.{File, FileInputStream}
 
+import javafx.collections.ObservableList
+import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
 import scalafx.scene
-import scalafx.Includes._
-import scalafx.scene.{Group, Node, Scene, SubScene}
+import scalafx.scene.{Node, Scene, SubScene}
 import scalafx.scene.canvas.Canvas
 import scalafx.scene.control.Label
 import scalafx.scene.effect.DropShadow
 import scalafx.scene.image.{Image, ImageView}
-import scalafx.scene.input.KeyCode
-import scalafx.scene.layout.{BorderPane, HBox, Pane}
+import javafx.scene.input.KeyCode
+import scalafx.scene.layout._
 import scalafx.scene.paint.Color
 import scalafx.scene.text.{Font, Text}
 import scalafxml.core.macros.sfxml
@@ -19,77 +20,93 @@ import scalafxml.core.macros.sfxml
 
 @sfxml
 class PlayGameController(
+                          private var flow: FlowPane,
+                          private var anchorPane: AnchorPane,
                           private var canvas: Canvas,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          private var num: Label
-                        ) {
+                        )  {
+
+  var map1 = Array(
+    //                      1 1 1 1 1 1 1 1
+    //    1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
+    Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), // 1
+    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 2
+    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 3
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 4
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 5
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 6
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 7
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 8
+    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 9
+    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 10
+    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 11
+    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 12
+    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 13
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 14
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 15
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 16
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 17
+    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 18
+    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 19
+    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 20
+    Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)) // 21
 
 
-    canvas.focusTraversable = true
-    canvas.width = 410
-
-
-// set image size
-  val imageW = 23
-  val imageH = imageW // set image Height
-  var ground = new Image(new File("src/main/resource/OOP_PacMan/image/ground.png").toURI.toURL.toString)
-  var wall = new Image(new File("src/main/resource/OOP_PacMan/image/wall.png").toURI.toURL.toString)
-  var coin = new Image(new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString)
-
-//canvas.graphicsContext2D.drawImage(wall,0,0,30,30)
-  var wallV = new ImageView(wall)
-  var groundV = new ImageView(ground)
-          var map1 = Array(
-            Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
-            Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1),
-            Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1),
-            Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1),
-            Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1),
-            Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1),
-            Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1),
-            Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1),
-            Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1),
-            Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1))
-
-//  var canwidth = canvas.width.toDouble/17
-//  println(canwidth)
-
-//  canvas.setWidth(410)
-          var x = 0// set image Width
-          var y = 0
-  var nextline = 0
-
+  var length = 0 // array length
+  /** search for longest length */
   for (row <- 0 until map1.length) { //loop map's row
     for (col <- 0 until map1(row).length) { //loop map's column
-      var num = map1(row)(col)
-//              println(num)
-      //print ground = 0
+      if (length <= map1(row).length) {
+        length = map1(row).length }}}
+
+  val imageW = 23// set image Width
+  val imageH = imageW // set image Height
+  var nextline = 0
+  var x = 0
+  var y = 0
+
+  var wallfile = new File("src/main/resource/OOP_PacMan/image/wall.png").toURI.toURL.toString
+  var groundfile = new File("src/main/resource/OOP_PacMan/image/ground.png").toURI.toURL.toString
+  var coinfile = new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString
+
+  var ground = new Image(groundfile,imageW,imageH,true,false)
+  var wall = new Image(wallfile,imageW,imageH,true,false)
+  var coin = new Image(coinfile,imageW,imageH,true,false)
+
+  flow.vgap = 1
+  flow.hgap = 1
+
+  flow.setMinWidth((imageW+1)*length)
+  flow.setPrefHeight(700)
+
+//  var groundList :Node
+//  var wallList :Node
+//  var coinList :Node
+
+  val flowWidth = flow.getMaxWidth
+  println(length)
+  for (row <- 0 until map1.length) { //loop map's row
+    for (col <- 0 until map1(row).length) { //loop map's column
+      val num = map1(row)(col)
+      // 0 = print ground
       if (num == 0){
-        canvas.graphicsContext2D.drawImage(ground, x, y, imageW, imageH)
+        flow.getChildren().add(new ImageView(ground))
+//        groundList = flow.children().applyCss()
+          x += (imageW) + 1
+        nextline += 1
+      }
+      // 1 = print wall
+      if (num == 1){
+        flow.getChildren().add(new ImageView(wall))
+//        wallList = flow.children()
         x += (imageW) + 1
         nextline += 1
       }
-      //print wall = 1
-      if (num == 1){
-        canvas.graphicsContext2D.drawImage(wall, x, y, imageW, imageH)
-        x += (imageW) + 1
-        nextline += 1
-       }
-      //print coin
+      // 2 = print coin
       if (num == 2){
-        canvas.graphicsContext2D.drawImage(coin, x, y, imageW, imageH)
+        flow.getChildren().add(new ImageView(coin))
+//        coinList = flow.children()
         x += (imageW) + 1
         nextline += 1
       }
@@ -100,11 +117,36 @@ class PlayGameController(
         x = 0
         nextline = 0 // reset
       }
-      }
     }
+  }
+  //  canvas.onKeyPressed = k => k.getCode match {
+  //
+  //    case KeyCode.W =>
+  //
+  //      pacmanY = pacmanY - 6
+  //      println(pacmanY)
+  //
+  //
+  //    case KeyCode.A =>
+  //
+  //      pacmanX = pacmanX - 6
+  //
+  //    case KeyCode.S =>
+  //
+  //      pacmanY = pacmanY + 6
+  //
+  //    case KeyCode.D =>
+  //
+  //      pacmanX = pacmanX + 6
+  //
+  //    case _ =>
+  //
+  //  }
 
+
+  def getCanvasWidth():Int ={
+    canvas.width.toInt
+  }
 
 
 }
-
-
