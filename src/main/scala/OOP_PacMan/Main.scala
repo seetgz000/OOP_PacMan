@@ -1,23 +1,17 @@
 package OOP_PacMan
 
-import java.io.File
-
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
-import scalafx.scene.{Group, Node, Parent, Scene}
+import scalafx.scene.{Parent, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
-import OOP_PacMan.controller.{PlayGameController, PlayerPageController}
+import OOP_PacMan.controller.PlayerPageController
 import User.Players
-import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
-import scalafx.scene.image.{Image, ImageView}
-import scalafx.scene.input.KeyCode
-import scalafx.scene.layout.AnchorPane
 
 object Main extends JFXApp {
 
@@ -57,9 +51,6 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
     stage.setMaxWidth(423)
     stage.setMinWidth(423)
-
-    showGameCanvas(roots2)
-
   }
 
   def showGameCanvas(root: AnchorPane): Unit = {
@@ -129,6 +120,7 @@ object Main extends JFXApp {
     }
     root.getChildren.add(group)
   }
+
 
 
 

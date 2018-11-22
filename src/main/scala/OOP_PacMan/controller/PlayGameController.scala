@@ -1,7 +1,6 @@
 package OOP_PacMan.controller
 
 import java.io.{File, FileInputStream}
-
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
