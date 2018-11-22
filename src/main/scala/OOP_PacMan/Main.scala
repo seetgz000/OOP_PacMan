@@ -1,17 +1,23 @@
 package OOP_PacMan
 
+import java.io.File
+
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
-import scalafx.scene.{Parent, Scene}
+import scalafx.scene.{Group, Parent, Scene}
 import scalafxml.core.{FXMLLoader, NoDependencyResolver}
 import scalafx.Includes._
 import javafx.{scene => jfxs}
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
-import OOP_PacMan.controller.PlayerPageController
+import OOP_PacMan.controller.{PlayGameController, PlayerPageController}
 import User.Players
+import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
+import scalafx.scene.image.{Image, ImageView}
+import scalafx.scene.input.KeyCode
+import scalafx.scene.layout.AnchorPane
 
 object Main extends JFXApp {
 
@@ -91,25 +97,25 @@ object Main extends JFXApp {
 
           //        canvas.translateY = canvas.translateY.value - 6
           pacmanY() = pacmanY.value - 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case KeyCode.A
           //        canvas.translateX= canvas.translateX.value - 6
           if !(pacmanX() <= 0)
             =>
           pacmanX() = pacmanX.value - 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case KeyCode.S
           if !(pacmanY() >= 432)
         =>
           //        canvas.translateY = canvas.translateY.value + 6
           pacmanY() = pacmanY.value + 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case KeyCode.D
           if !(pacmanX() >= 336)
         =>
           //        canvas.translateX = canvas.translateX.value + 6
           pacmanX() = pacmanX.value + 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case _ =>
 
       }
