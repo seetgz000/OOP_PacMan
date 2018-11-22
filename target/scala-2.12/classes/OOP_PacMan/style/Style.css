@@ -54,6 +54,13 @@
 	-fx-font-size: 42px;
 }
 
+#quit-button{
+    -fx-background-image: url("../image/quit-button.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
+
 //high score css
 .font-TableTitle-HighScore{
 	-fx-font-family: 'Fleftex';
