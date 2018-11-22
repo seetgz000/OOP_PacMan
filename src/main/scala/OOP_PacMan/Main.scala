@@ -100,25 +100,25 @@ object Main extends JFXApp {
 
           //        canvas.translateY = canvas.translateY.value - 6
           pacmanY() = pacmanY.value - 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case KeyCode.A
           //        canvas.translateX= canvas.translateX.value - 6
           if !(pacmanX() <= 0)
             =>
           pacmanX() = pacmanX.value - 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case KeyCode.S
           if !(pacmanY() >= 432)
         =>
           //        canvas.translateY = canvas.translateY.value + 6
           pacmanY() = pacmanY.value + 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case KeyCode.D
           if !(pacmanX() >= 336)
         =>
           //        canvas.translateX = canvas.translateX.value + 6
           pacmanX() = pacmanX.value + 6
-          print(pacmanX.value,pacmanY.value)
+//          print(pacmanX.value,pacmanY.value)
         case _ =>
 
       }
