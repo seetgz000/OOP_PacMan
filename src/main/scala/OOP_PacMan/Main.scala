@@ -11,7 +11,7 @@ import javafx.{scene => jfxs}
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
-import OOP_PacMan.controller.{PlayGameController, PlayerPageController}
+import OOP_PacMan.controller.{PlayGameController, GameOverController}
 import User.Players
 import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
@@ -145,11 +145,11 @@ object Main extends JFXApp {
   }
 
   def showAddNew(players: Players):Boolean = {
-      val resource = getClass.getResourceAsStream("view/PlayerPage.fxml")
+      val resource = getClass.getResourceAsStream("view/GameOver.fxml")
       val loader = new FXMLLoader(null, NoDependencyResolver)
       loader.load(resource);
       val roots2  = loader.getRoot[jfxs.Parent]
-      val control = loader.getController[PlayerPageController#Controller]
+      val control = loader.getController[GameOverController#Controller]
 
     val dialog = new Stage() {
       initModality(Modality.APPLICATION_MODAL)

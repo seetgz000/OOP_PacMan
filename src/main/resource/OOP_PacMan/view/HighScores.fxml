@@ -14,15 +14,15 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                     <children>
-                        <Label layoutX="80.0" layoutY="31.0" prefHeight="53.0" prefWidth="249.0" styleClass="font" text="HIGH SCORES" textFill="WHITE">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="33.0" prefHeight="53.0" prefWidth="400.0" styleClass="font" text="HIGH SCORES" textFill="WHITE">
                             <font>
                                 <Font size="27.0" />
                             </font>
                         </Label>
-                        <TableView fx:id="itemtableview" layoutY="110.0" prefHeight="388.0" prefWidth="369.0" styleClass="table-view">
+                        <TableView fx:id="itemtableview" layoutY="110.0" prefHeight="388.0" prefWidth="400.0" styleClass="table-view">
                             <columns>
-                                <TableColumn fx:id="nameColumn" prefWidth="182.0" text="Name" />
-                                <TableColumn fx:id="scoreColumn" prefWidth="186.0" text="Score" />
+                                <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Name" />
+                                <TableColumn fx:id="scoreColumn" prefWidth="200.0" text="Score" />
                             </columns>
                         </TableView>
                     </children>
