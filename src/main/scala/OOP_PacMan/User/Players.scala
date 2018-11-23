@@ -92,7 +92,7 @@ object Players extends Database {
 
   def getAllUsers : List[Players] = {
     DB readOnly { implicit session =>
-      sql"select * from player".map(rs => Players(rs.string("name"),
+      sql"SELECT * FROM player ORDER BY score DESC FETCH FIRST 5 ROWS ONLY".map(rs => Players(rs.string("name"),
         rs.int("score") )).list.apply()
     }
   }

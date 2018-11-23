@@ -38,7 +38,7 @@ class UserController (
   }
 
   def handleNewPlayer(action: ActionEvent) = {
-    val player = new Players("Please Enter A Name Here", 0)
+    val player = new Players("Please Enter Your Name", 200)
     val okClicked = Main.showAddNew(player);
     if (okClicked) {
       Main.Userlist += player

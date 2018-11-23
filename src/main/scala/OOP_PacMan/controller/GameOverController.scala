@@ -9,7 +9,7 @@ import scalafx.event.ActionEvent
 import OOP_PacMan.Main
 
 @sfxml
-class PlayerPageController (
+class GameOverController(
 
   private val  name : TextField
 
@@ -38,11 +38,16 @@ class PlayerPageController (
 
   def nullChecking(x: String) = x == null || x.length == 0
 
+  def lengthChecking(x: String) = x.length >= 8
+
   def isInputValid(): Boolean = {
     var errorMessage = ""
 
     if (nullChecking(name.text.value))
-      errorMessage += "No valid first name!\n"
+      errorMessage += "No valid name!\n"
+
+    if (lengthChecking(name.text.value))
+      errorMessage += "Maximum 8 characters!\n"
 
     if (errorMessage.length() == 0) {
       return true;

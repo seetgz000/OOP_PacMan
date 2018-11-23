@@ -11,9 +11,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.MainController">
    <children>
-      <StackPane fx:id="introRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" stylesheets="@../style/Style.css">
+      <StackPane fx:id="introRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0">
          <children>
-            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" stylesheets="@../style/Style.css">
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0">
                <children>
                   <BorderPane prefHeight="25.0" prefWidth="296.0">
                      <right>
@@ -52,7 +52,7 @@
             </VBox>
          </children>
       </StackPane>
-      <BorderPane id="background" maxHeight="700.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css">
+      <BorderPane id="background" maxHeight="700.0" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background">
          <bottom>
             <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="269.0" prefWidth="198.0" BorderPane.alignment="CENTER">
                <children>
