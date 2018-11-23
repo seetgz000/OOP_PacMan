@@ -48,6 +48,13 @@
 	-fx-font-size: 14px;
 }
 
+.textBox-GameOver{
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
 //game play page
 .font-Title-HighScore{
 	-fx-font-family: 'Fleftex';

@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" stylesheets="@../style/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.PlayGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.PlayGameController">
     <children>
         <BorderPane prefHeight="600.0" prefWidth="400.0">
             <top>
@@ -20,10 +20,10 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" stylesheets="@../style/Style.css" text="SCORE : " textFill="WHITE" />
-                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="124.0" styleClass="font" stylesheets="@../style/Style.css" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="129.0" styleClass="font" stylesheets="@../style/Style.css" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" stylesheets="@../style/Style.css" text="HIGH SCORE : " textFill="WHITE" GridPane.columnIndex="2" />
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="SCORE : " textFill="WHITE" />
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="124.0" styleClass="font" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="25.0" prefWidth="129.0" styleClass="font" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="HIGH SCORE : " textFill="WHITE" GridPane.columnIndex="2" />
                     </children>
                     <BorderPane.margin>
                         <Insets top="10.0" />
