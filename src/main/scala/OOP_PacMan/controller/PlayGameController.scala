@@ -3,6 +3,8 @@ package OOP_PacMan.controller
 import java.io.{File, FileInputStream}
 
 import OOP_PacMan.Main
+import OOP_PacMan.ghost.Ghost
+import OOP_PacMan.ghost.Ghost.purpleGhost
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty

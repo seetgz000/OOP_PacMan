@@ -11,7 +11,8 @@ import javafx.{scene => jfxs}
 import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
-import OOP_PacMan.controller.{PlayGameController, GameOverController}
+import OOP_PacMan.controller.{GameOverController, PlayGameController}
+import OOP_PacMan.ghost.Ghost
 import User.Players
 import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
@@ -57,6 +58,10 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
     stage.setMaxWidth(423)
     stage.setMinWidth(423)
+
+    Ghost.preparingGhost
+
+    showGameCanvas(roots2)
   }
 
   def showGameCanvas(root: AnchorPane): Unit = {
@@ -88,13 +93,15 @@ object Main extends JFXApp {
       val wall = playGameCtrl.wall
       val coin = playGameCtrl.coin
       val map = playGameCtrl.map1
+
+      var escCondition:Boolean =true
+
       stage.scene().onKeyPressed = k => k.code match {
 
         case KeyCode.W
 //          if !pacman.boundsInParent().intersects(playGameCtrl.groundList.boundsInLocal())
           if !(pacmanY() <= 0)
         =>
-
           //        canvas.translateY = canvas.translateY.value - 6
           pacmanY() = pacmanY.value - 6
 //          print(pacmanX.value,pacmanY.value)
@@ -116,19 +123,33 @@ object Main extends JFXApp {
           //        canvas.translateX = canvas.translateX.value + 6
           pacmanX() = pacmanX.value + 6
 //          print(pacmanX.value,pacmanY.value)
+
+        case KeyCode.Escape
+        =>
+          if(escCondition) {
+            Ghost.animationTimer.stop()
+              escCondition = false
+          }
+          else {
+            Ghost.animationTimer.start()
+            escCondition = true
+          }
+
         case _ =>
 
       }
 
       children = List(
-        pacman
+        pacman,
+        Ghost.purpleGhost,
+        Ghost.blueGhost,
+        Ghost.coralGhost,
+        Ghost.redGhost
       )
     }
+
     root.getChildren.add(group)
   }
-
-
-
 
 
   //show high score page
