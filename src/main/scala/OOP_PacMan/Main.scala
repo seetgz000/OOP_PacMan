@@ -57,6 +57,8 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
     stage.setMaxWidth(423)
     stage.setMinWidth(423)
+
+    showGameCanvas(roots2)
   }
 
   def showGameCanvas(root: AnchorPane): Unit = {

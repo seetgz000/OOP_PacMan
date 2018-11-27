@@ -26,7 +26,7 @@ class PlayGameController(
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          private val escPause : ImageView
+                          var pauseRoot: StackPane
                         )  {
 
   var map1 = Array(
@@ -122,13 +122,19 @@ class PlayGameController(
   }
 
 
-  // pause game
-  val escPauseImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
-  escPause.setImage(escPauseImg)
-
   def quitGame(action:ActionEvent)={
     Main.backToMain()
   }
 
+  //for pause pop up
+  def openPause()={
+    pauseRoot.toFront()
+  }
+
+  def closePause()={
+    pauseRoot.toBack()
+  }
+
+  pauseRoot.toBack()
 
 }
