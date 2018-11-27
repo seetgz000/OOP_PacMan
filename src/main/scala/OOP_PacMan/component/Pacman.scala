@@ -25,6 +25,4 @@ class Pacman extends ImageView {
     preserveRatio = true
     x = 25
     y = 90
-    translateX <== pacmanX
-    translateY <== pacmanY
 }
