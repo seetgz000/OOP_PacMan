@@ -2,84 +2,40 @@ package OOP_PacMan.ghost
 
 import java.io.File
 
-import OOP_PacMan.Main
+import OOP_PacMan.component.Ghost
+import OOP_PacMan.{Main, Movement}
 import scalafx.scene.image.{Image, ImageView}
 
 import scala.language.postfixOps
-import scalafx.Includes._
 import scalafx.animation.{AnimationTimer, PauseTransition}
 import scalafx.beans.property.DoubleProperty
+import scalafx.scene.Node
 import scalafx.scene.input.KeyCode
+import scalafx.scene.paint.Color
+import scalafx.scene.shape.Rectangle
 import scalafx.util.Duration
-
 import scala.util.Random
 
-object Ghost extends Movement {
 
+object Ghosts extends Movement {
 
-  /** Translation of Ghosts */
-  val purpleGhostX = new DoubleProperty
-  val purpleGhostY = new DoubleProperty
-
-  val blueGhostX = new DoubleProperty
-  val blueGhostY = new DoubleProperty
-
-  val coralGhostX = new DoubleProperty
-  val coralGhostY = new DoubleProperty
-
-  val redGhostX = new DoubleProperty
-  val redGhostY = new DoubleProperty
-
-
-
-  /** Initialize Ghosts */
+  /** set ghosts images */
   val purpleGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/purpleghost-down.png").toURI.toURL.toString)
   val blueGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/blueghost-down.png").toURI.toURL.toString)
   val coralGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/coralghost-down.png").toURI.toURL.toString)
   val redGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/redghost-down.png").toURI.toURL.toString)
 
+  val purpleGhost = new Ghost(192,120)
+  purpleGhost.setImage(purpleGhostImg)
 
-  val ghostW = 20
+  val blueGhost = new Ghost(25,520)
+  blueGhost.setImage(blueGhostImg)
 
-  val purpleGhost = new ImageView(purpleGhostImg){
-    fitWidth = ghostW
-    preserveRatio = true
-    x = 25
-    y = 90
-  }
+  val coralGhost = new Ghost(360,90)
+  coralGhost.setImage(coralGhostImg)
 
-  val blueGhost = new ImageView(blueGhostImg){
-    fitWidth = ghostW
-    preserveRatio = true
-    x = 55
-    y = 87
-//    x = 24
-//    y = 520
-    translateX <== blueGhostX
-    translateY <== blueGhostY
-  }
-
-  val coralGhost = new ImageView(coralGhostImg){
-    fitWidth = ghostW
-    preserveRatio = true
-    x = 55
-    y = 87
-//    x = 360
-//    y = 520
-    translateX <== coralGhostX
-    translateY <== coralGhostY
-  }
-
-  val redGhost = new ImageView(redGhostImg){
-    fitWidth = ghostW
-    preserveRatio = true
-    x = 24
-    y = 87
-//    x = 360
-//    y = 87
-    translateX <== redGhostX
-    translateY <== redGhostY
-  }
+  val redGhost = new Ghost(360,400)//y =500
+  redGhost.setImage(redGhostImg)
 
   //show current time
   val startTime = System.nanoTime()
@@ -95,18 +51,17 @@ object Ghost extends Movement {
   var randomNoCoral:Int = 0
   var randomNoRed:Int = 0
 
-  //set range of random numbers
-  val start = 1
-  val end = 4
 
   //animate ghost movement
   val animationTimer=AnimationTimer(e=>{
-    duration = (e-startTime)/1e9
+    //set range of random numbers
+    val start = 1
+    val end = 4
 
     //used to generate random numbers at timed manner(about 20 nanosecs in between)
     //or ghost will go on a spasm
     frameCount+=1
-    if (frameCount >= 70) {
+    if (frameCount >= 60) {
       val random = new Random()
       randomNoPurple = start+random.nextInt((end-start)+1)
       randomNoBlue = start+random.nextInt((end-start)+1)
@@ -114,21 +69,22 @@ object Ghost extends Movement {
     }
 
     frameCount2+=1
-    if (frameCount2 >= 70) {
+    if (frameCount2 >= 50) {
       val random = new Random()
       randomNoCoral = start+random.nextInt((end-start)+1)
       randomNoRed = start+random.nextInt((end-start)+1)
       frameCount2 = 0
     }
 
-    movement(purpleGhost,randomNoPurple,2)
-    println(randomNoPurple)
-//
-//    movement(blueGhost,randomNoBlue,5)
-//
-//    movement(coralGhost,randomNoCoral,5)
-//
-//    movement(redGhost,randomNoRed,5)
+    movement(purpleGhost,randomNoPurple,6)
+
+    movement(blueGhost,randomNoBlue,6)
+    //collisionDetection(blueGhost)
+
+    movement(coralGhost,randomNoCoral,6)
+    //collisionDetection(coralGhost)
+
+    movement(redGhost,randomNoRed,6)
 
 
 //    if(Main.pacman.getBoundsInParent().intersects(purpleGhost.getBoundsInParent())){
@@ -151,40 +107,18 @@ object Ghost extends Movement {
     animationTimer.start()
   }
 
-
-  def preparingNextLevel={
-
-    purpleGhostX() = 0
-    purpleGhostY() = 0
-
-    blueGhostX() = 0
-    blueGhostY() = 0
-
-    coralGhostX() = 0
-    coralGhostY() = 0
-
-    redGhostX() = 0
-    redGhostY() = 0
-    animationTimer.start()
-  }
-
-
-
   //when pacman loses
-//  def die(): Unit ={
+//  def die(){
 //    val timer = new PauseTransition(Duration(2000))
 //    animationTimer.stop()
 //    //death animation
-//    Main.pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif").toURI.toURL.toString))
-//    timer.onFinished = e =>{
-//      Main.backToMain()
-//      Main.pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif").toURI.toURL.toString))
-//    }
-//
+////    Main.pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif").toURI.toURL.toString))
+////    timer.onFinished = e => {
+////      Main.backToMain()
+////      Main.pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif").toURI.toURL.toString))
+////    } //end die
 //    timer.play()
-//
 //  }
-
 
   //**reserved**//
 
