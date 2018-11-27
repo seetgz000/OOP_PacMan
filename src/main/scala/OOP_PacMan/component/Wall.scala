@@ -1,10 +1,10 @@
-package OOP_PacMan.Component
+package OOP_PacMan.component
 
 import java.io.File
 
 import scalafx.scene.image.{Image, ImageView}
 
-class wall extends ImageView{
+class Wall extends ImageView{
   val imageW = 23// set image Width
   val imageH = imageW // set image Height
   var wallFile = new File("src/main/resource/OOP_PacMan/image/wall.png").toURI.toURL.toString

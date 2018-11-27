@@ -2,9 +2,9 @@ package OOP_PacMan.controller
 
 import java.io.{File, FileInputStream}
 
-import OOP_PacMan.Component.wall
+import OOP_PacMan.component.Wall
 import OOP_PacMan.Main
-import OOP_PacMan.pacmanMap
+import OOP_PacMan.PacmanMap
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
@@ -28,7 +28,8 @@ class PlayGameController(
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          private val escPause : ImageView
+                          private val escPause : ImageView,
+                          private var highScoreLabel : Label
                         )  {
 
   var map1 = Array(
@@ -62,22 +63,11 @@ class PlayGameController(
 
 
   /** To print out image according array */
-  pacmanMap.showMap(flow, map1)
-
-//  println(flow.getChildren.length)
-
-//  flow.getChildren.foreach(children =>
-//    children.asInstanceOf[wall])
-//
-//  flow.getChildren.foreach(children =>
-//    println(children.isInstanceOf[wall]))
+  PacmanMap.showMap(flow, map1)
 
 
-  //  for (flow.children.isInstanceOf[wall]){
-//    if (flow.getChildrenUnmodifiable.retainAll(new ImageView).lookupAll("wall"))
-//  }
 
-  // pause game
+  /** pause game */
   val escPauseImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
   escPause.setImage(escPauseImg)
 

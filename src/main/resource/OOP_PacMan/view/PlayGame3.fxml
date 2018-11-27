@@ -15,7 +15,7 @@
                <children>
                   <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="SCORE : " textFill="WHITE" />
                   <Label alignment="CENTER" prefHeight="27.0" prefWidth="124.0" styleClass="font" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
-                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="129.0" styleClass="font" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label fx:id="highScoreLabel" alignment="CENTER" prefHeight="25.0" prefWidth="129.0" styleClass="font" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="HIGH SCORE : " textFill="WHITE" GridPane.columnIndex="2" />
                </children>
                <columnConstraints>

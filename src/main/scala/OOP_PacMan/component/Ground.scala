@@ -1,10 +1,10 @@
-package OOP_PacMan.Component
+package OOP_PacMan.component
 
 import java.io.File
 
 import scalafx.scene.image.{Image, ImageView}
 
-class ground extends ImageView{
+class Ground extends ImageView{
   val imageW = 23// set image Width
   val imageH = imageW // set image Height
   var groundFile = new File("src/main/resource/OOP_PacMan/image/ground.png").toURI.toURL.toString

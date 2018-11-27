@@ -12,7 +12,7 @@ import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
 import OOP_PacMan.controller.{GameOverController, PlayGameController}
-import OOP_PacMan.Component.pacman
+import OOP_PacMan.component.{Coin, Pacman}
 import User.Players
 import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
@@ -62,28 +62,18 @@ object Main extends JFXApp {
     showGameCanvas(roots2)
   }
 
-  def collisionHandling(movement: String, pacman: Node, thisWall: Node): Unit = {
-
-    while (pacman.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))) movement match{
-      case "UP"
-      =>
-        pacman.setTranslateY(pacman.getTranslateY + 6)
-    }
-    println(pacman.localToScene(pacman.getBoundsInLocal()),thisWall.localToScene(thisWall.getBoundsInLocal()))
-  }
-
   def showGameCanvas(root: AnchorPane): Unit = {
 
     val group = new Group() {
 
 
-      var thisWall: Node = pacmanMap.wallList.head
+      var thisWall: Node = PacmanMap.wallList.head
       var moveableUp = Array(0)
       var moveableDown = Array(0)
       var moveableLeft = Array(0)
       var moveableRight = Array(0)
-      var pacman = new pacman
-      var pacmanTester = new pacman
+      var pacman = new Pacman
+      var pacmanTester = new Pacman
 
         stage.scene().onKeyPressed = k => k.code match {
 
@@ -92,8 +82,8 @@ object Main extends JFXApp {
 
             pacmanTester.pacmanY() = pacman.pacmanY.value - 6
             pacmanTester.pacmanX() = pacman.pacmanX.value
-        for (row <- 1 until pacmanMap.wallList.size){
-          thisWall = pacmanMap.wallList.take(row).last
+        for (row <- 1 until PacmanMap.wallList.size){
+          thisWall = PacmanMap.wallList.take(row).last
 
           if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
             thisWall.localToScene(thisWall.getBoundsInLocal()))){
@@ -101,11 +91,11 @@ object Main extends JFXApp {
           }else {
             moveableUp = moveableUp ++ Array(1)
           }
-          thisWall = pacmanMap.wallList.take(row).last
+          thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableUp.contains(1)) {
           pacman.pacmanY() = pacman.pacmanY.value - 6
-//          pacmanTester.pacmanY() = pacman.pacmanY() - 6
+          Coin.checkCoinCollision(pacman)
           moveableUp = Array(0)
         } else {
           moveableUp = Array(0)
@@ -115,8 +105,8 @@ object Main extends JFXApp {
         =>
           pacmanTester.pacmanX() = pacman.pacmanX.value - 6
           pacmanTester.pacmanY() = pacman.pacmanY.value
-          for (row <- 1 until pacmanMap.wallList.size){
-            thisWall = pacmanMap.wallList.take(row).last
+          for (row <- 1 until PacmanMap.wallList.size){
+            thisWall = PacmanMap.wallList.take(row).last
 
             if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
               thisWall.localToScene(thisWall.getBoundsInLocal()))){
@@ -124,11 +114,11 @@ object Main extends JFXApp {
             }else {
               moveableLeft = moveableLeft ++ Array(1)
             }
-            thisWall = pacmanMap.wallList.take(row).last
+            thisWall = PacmanMap.wallList.take(row).last
           }
           if (!moveableLeft.contains(1)) {
             pacman.pacmanX() = pacman.pacmanX.value - 6
-//            pacmanTester.pacmanX() = pacman.pacmanX() - 6
+            Coin.checkCoinCollision(pacman)
             moveableLeft = Array(0)
           } else {
             moveableLeft = Array(0)
@@ -137,18 +127,19 @@ object Main extends JFXApp {
         =>
           pacmanTester.pacmanY() = pacman.pacmanY.value + 6
           pacmanTester.pacmanX() = pacman.pacmanX.value
-          for (row <- 1 until pacmanMap.wallList.size){
-            thisWall = pacmanMap.wallList.take(row).last
+          for (row <- 1 until PacmanMap.wallList.size){
+            thisWall = PacmanMap.wallList.take(row).last
 
             if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
               moveableDown = moveableDown ++ Array(0)
             }else {
               moveableDown = moveableDown ++ Array(1)
             }
-            thisWall = pacmanMap.wallList.take(row).last
+            thisWall = PacmanMap.wallList.take(row).last
           }
           if (!moveableDown.contains(1)) {
             pacman.pacmanY() = pacman.pacmanY.value + 6
+            Coin.checkCoinCollision(pacman)
             moveableDown = Array(0)
           } else {
             moveableDown = Array(0)
@@ -158,18 +149,19 @@ object Main extends JFXApp {
         =>
           pacmanTester.pacmanX() = pacman.pacmanX.value + 6
           pacmanTester.pacmanY() = pacman.pacmanY.value
-          for (row <- 1 until pacmanMap.wallList.size){
-            thisWall = pacmanMap.wallList.take(row).last
+          for (row <- 1 until PacmanMap.wallList.size){
+            thisWall = PacmanMap.wallList.take(row).last
 
             if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
               moveableRight = moveableRight ++ Array(0)
             }else {
               moveableRight = moveableRight ++ Array(1)
             }
-            thisWall = pacmanMap.wallList.take(row).last
+            thisWall = PacmanMap.wallList.take(row).last
           }
           if (!moveableRight.contains(1)) {
             pacman.pacmanX() = pacman.pacmanX.value + 6
+            Coin.checkCoinCollision(pacman)
             moveableRight = Array(0)
           } else {
             moveableRight = Array(0)
