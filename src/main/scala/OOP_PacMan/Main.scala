@@ -12,6 +12,7 @@ import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
 import OOP_PacMan.controller.{GameOverController, PlayGameController}
+import OOP_PacMan.Component.pacman
 import User.Players
 import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
@@ -55,107 +56,123 @@ object Main extends JFXApp {
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
     stage.scene().setRoot(roots2)
-    stage.setMaxWidth(423)
+//    stage.setMaxWidth(600)
     stage.setMinWidth(423)
 
     showGameCanvas(roots2)
   }
 
+  def collisionHandling(movement: String, pacman: Node, thisWall: Node): Unit = {
+
+    while (pacman.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))) movement match{
+      case "UP"
+      =>
+        pacman.setTranslateY(pacman.getTranslateY + 6)
+    }
+    println(pacman.localToScene(pacman.getBoundsInLocal()),thisWall.localToScene(thisWall.getBoundsInLocal()))
+  }
+
   def showGameCanvas(root: AnchorPane): Unit = {
 
     val group = new Group() {
-      /** Translation of Pacman */
-      val pacmanX = new DoubleProperty
-      val pacmanY = new DoubleProperty
-
-      /** Initialize Pacman */
-      val pacmanImg = new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif").toURI.toURL.toString)
-      val pacmanW = 20
-      val pacmanH = 20
 
 
-      val pacman = new ImageView(pacmanImg) {
-        fitWidth = pacmanW
-        preserveRatio = true
-        x = 25
-        y = 90
-        translateX <== pacmanX
-        translateY <== pacmanY
-      }
-      val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
-      val loader = new FXMLLoader(null, NoDependencyResolver)
-      loader.load(resource);
       var thisWall: Node = pacmanMap.wallList.head
-      var moveable = Array(0)
+      var moveableUp = Array(0)
+      var moveableDown = Array(0)
+      var moveableLeft = Array(0)
+      var moveableRight = Array(0)
+      var pacman = new pacman
+      var pacmanTester = new pacman
 
-//      print(thisWall.localToScene(thisWall.getBoundsInLocal()).getMaxX, thisWall.localToScene(thisWall.getBoundsInLocal()).getMaxY,
-//        thisWall.localToScene(thisWall.getBoundsInLocal()).getMinX, thisWall.localToScene(thisWall.getBoundsInLocal()).getMinY)
-//      println("Parent and Local", pacman.getBoundsInParent(), thisWall.localToScene(thisWall.getBoundsInLocal()))
-//      println("Parent and Parent", pacman.getBoundsInParent(), thisWall.boundsInParent())
         stage.scene().onKeyPressed = k => k.code match {
-
-        //            print(pacmanMap.wallList.take(row))
 
           case KeyCode.W
           =>
+
+            pacmanTester.pacmanY() = pacman.pacmanY.value - 6
+            pacmanTester.pacmanX() = pacman.pacmanX.value
         for (row <- 1 until pacmanMap.wallList.size){
           thisWall = pacmanMap.wallList.take(row).last
 
-          if (!pacman.localToParent(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
-            moveable = moveable ++ Array(0)
+          if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
+            thisWall.localToScene(thisWall.getBoundsInLocal()))){
+            moveableUp = moveableUp ++ Array(0)
           }else {
-            moveable = moveable ++ Array(1)
+            moveableUp = moveableUp ++ Array(1)
           }
           thisWall = pacmanMap.wallList.take(row).last
         }
-        if (! moveable.contains(1)) {
-          pacmanY() = pacmanY.value - 6
+        if (!moveableUp.contains(1)) {
+          pacman.pacmanY() = pacman.pacmanY.value - 6
+//          pacmanTester.pacmanY() = pacman.pacmanY() - 6
+          moveableUp = Array(0)
+        } else {
+          moveableUp = Array(0)
         }
 
         case KeyCode.A
         =>
+          pacmanTester.pacmanX() = pacman.pacmanX.value - 6
+          pacmanTester.pacmanY() = pacman.pacmanY.value
           for (row <- 1 until pacmanMap.wallList.size){
             thisWall = pacmanMap.wallList.take(row).last
 
-            if (!pacman.localToParent(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
-              moveable = moveable ++ Array(0)
+            if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
+              thisWall.localToScene(thisWall.getBoundsInLocal()))){
+              moveableLeft = moveableLeft ++ Array(0)
             }else {
-              moveable = moveable ++ Array(1)
+              moveableLeft = moveableLeft ++ Array(1)
             }
             thisWall = pacmanMap.wallList.take(row).last
           }
-          if (! moveable.contains(1)) {
-            pacmanX() = pacmanX.value - 6
+          if (!moveableLeft.contains(1)) {
+            pacman.pacmanX() = pacman.pacmanX.value - 6
+//            pacmanTester.pacmanX() = pacman.pacmanX() - 6
+            moveableLeft = Array(0)
+          } else {
+            moveableLeft = Array(0)
           }
         case KeyCode.S
         =>
+          pacmanTester.pacmanY() = pacman.pacmanY.value + 6
+          pacmanTester.pacmanX() = pacman.pacmanX.value
           for (row <- 1 until pacmanMap.wallList.size){
             thisWall = pacmanMap.wallList.take(row).last
 
-            if (!pacman.localToParent(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
-              moveable = moveable ++ Array(0)
+            if (!pacman.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
+              moveableDown = moveableDown ++ Array(0)
             }else {
-              moveable = moveable ++ Array(1)
+              moveableDown = moveableDown ++ Array(1)
             }
             thisWall = pacmanMap.wallList.take(row).last
           }
-          if (! moveable.contains(1)) {
-            pacmanY() = pacmanY.value + 6
+          if (!moveableDown.contains(1)) {
+            pacman.pacmanY() = pacman.pacmanY.value + 6
+            moveableDown = Array(0)
+          } else {
+            moveableDown = Array(0)
           }
+
         case KeyCode.D
         =>
+          pacmanTester.pacmanX() = pacman.pacmanX.value + 6
+          pacmanTester.pacmanY() = pacman.pacmanY.value
           for (row <- 1 until pacmanMap.wallList.size){
             thisWall = pacmanMap.wallList.take(row).last
 
-            if (!pacman.localToParent(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
-              moveable = moveable ++ Array(0)
+            if (!pacman.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
+              moveableRight = moveableRight ++ Array(0)
             }else {
-              moveable = moveable ++ Array(1)
+              moveableRight = moveableRight ++ Array(1)
             }
             thisWall = pacmanMap.wallList.take(row).last
           }
-          if (! moveable.contains(1)) {
-            pacmanX() = pacmanX.value + 6
+          if (!moveableRight.contains(1)) {
+            pacman.pacmanX() = pacman.pacmanX.value + 6
+            moveableRight = Array(0)
+          } else {
+            moveableRight = Array(0)
           }
         case _ =>
       }

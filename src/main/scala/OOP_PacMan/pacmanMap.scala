@@ -2,7 +2,7 @@ package OOP_PacMan
 
 import java.io.File
 
-import OOP_PacMan.Component.wall
+import OOP_PacMan.Component.{coin, wall}
 import javafx.scene.Node
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.image.{Image, ImageView}
@@ -18,11 +18,11 @@ object pacmanMap {
 
 //  var wallfile = new File("src/main/resource/OOP_PacMan/image/wall.png").toURI.toURL.toString
   var groundfile = new File("src/main/resource/OOP_PacMan/image/ground.png").toURI.toURL.toString
-  var coinfile = new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString
+//  var coinfile = new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString
 
   var ground = new Image(groundfile,imageW,imageH,true,false)
 //  var wall = new Image(wallfile,imageW,imageH,true,false)
-  var coin = new Image(coinfile,imageW,imageH,true,false)
+//  var coin = new Image(coinfile,imageW,imageH,true,false)
 
 //  var wallPos: Iterable[Iterable[Double]] = None
   var wallList: Iterable[Node] = None
@@ -32,6 +32,7 @@ object pacmanMap {
 
 
     var length = 0 // array length
+    var lengthcount = 0
     /** search for longest length */
     for (row <- 0 until mapLayout.length) { //loop map's row
       for (col <- 0 until mapLayout(row).length) { //loop map's column
@@ -50,6 +51,7 @@ object pacmanMap {
         /** 0 = print ground */
         if (num == 0){
           flow.getChildren().add(new ImageView(ground))
+          lengthcount += 1
 
           lastWallIndex = flow.getChildren().size() - 1
 //          wallPos = wallPos ++ Iterable(Iterable(0.0, 0.0))
@@ -59,7 +61,8 @@ object pacmanMap {
         }
         // 1 = print wall
         if (num == 1){
-          flow.getChildren().add((new wall))
+          flow.getChildren().add(new wall)
+          lengthcount += 1
 
           lastWallIndex = flow.getChildren().size() - 1
           wallList = wallList ++ Iterable(flow.getChildren.get(lastWallIndex))
@@ -69,7 +72,8 @@ object pacmanMap {
         }
         // 2 = print coin
         if (num == 2){
-          flow.getChildren().add(new ImageView(coin))
+          flow.getChildren().add(new component)
+          lengthcount += 1
           //        coinList = flow.children()
           x += (imageW) + 1
           nextline += 1
@@ -82,8 +86,19 @@ object pacmanMap {
           nextline = 0 // reset
         }
       }
+      // fill up spaces so that flowpane will not messed up
+      if (lengthcount < length ) {
+        for (extra <- 0 until (length - lengthcount)) {
+          flow.getChildren().add(new ImageView(ground))
+        }
+      }
+      lengthcount = 0
     }
 //    println(wallList)
   }
+
+}
+
+class component extends coin {
 
 }

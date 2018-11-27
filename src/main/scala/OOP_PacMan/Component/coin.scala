@@ -1,9 +1,17 @@
 package OOP_PacMan.Component
 
-import scalafx.scene.image.ImageView
+import java.io.File
 
-trait coin extends ImageView {
+import scalafx.scene.image.{Image, ImageView}
 
+trait coin extends ImageView{
   val imageW = 23// set image Width
   val imageH = imageW // set image Height
+  var coinfile = new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString
+  var coin = new Image(coinfile,imageW,imageH,true,false)
+  val coinStyle: Iterable[String] = List("coin")
+
+  fitWidth = imageW
+  image = coin
+  styleClass= coinStyle
 }
