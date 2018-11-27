@@ -140,7 +140,7 @@ object Main extends JFXApp {
           for (row <- 1 until pacmanMap.wallList.size){
             thisWall = pacmanMap.wallList.take(row).last
 
-            if (!pacman.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
+            if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
               moveableDown = moveableDown ++ Array(0)
             }else {
               moveableDown = moveableDown ++ Array(1)
@@ -161,7 +161,7 @@ object Main extends JFXApp {
           for (row <- 1 until pacmanMap.wallList.size){
             thisWall = pacmanMap.wallList.take(row).last
 
-            if (!pacman.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
+            if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(thisWall.localToScene(thisWall.getBoundsInLocal()))){
               moveableRight = moveableRight ++ Array(0)
             }else {
               moveableRight = moveableRight ++ Array(1)

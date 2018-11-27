@@ -58,7 +58,7 @@
           <entry key="java" value="15" />
           <entry key="name" value="1" />
           <entry key="sbt" value="3" />
-          <entry key="scala" value="35" />
+          <entry key="scala" value="36" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
@@ -67,7 +67,7 @@
           <entry key="IDEA_MODULE" value="2" />
           <entry key="JAVA" value="15" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Scala" value="35" />
+          <entry key="Scala" value="36" />
           <entry key="XML" value="8" />
           <entry key="sbt" value="3" />
         </counts>
@@ -76,12 +76,12 @@
         <counts>
           <entry key="fxml" value="12" />
           <entry key="sbtShell" value="14" />
-          <entry key="scala" value="6255" />
+          <entry key="scala" value="6389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Scala" value="6255" />
+          <entry key="Scala" value="6389" />
           <entry key="XML" value="12" />
           <entry key="sbtShell" value="14" />
         </counts>
@@ -141,8 +141,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="137" column="60" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
+            <state relative-caret-position="259">
+              <caret line="142" column="29" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
               <folding>
                 <element signature="e#20#39#0" expanded="true" />
               </folding>
@@ -153,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/pacman.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="238">
               <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
                 <element signature="e#30#49#0" expanded="true" />
@@ -177,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/coin.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="15" selection-end-column="23" />
+            <state>
+              <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
               <folding>
                 <element signature="e#30#49#0" expanded="true" />
               </folding>
@@ -189,8 +189,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/wall.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="16" selection-end-column="1" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#30#49#0" expanded="true" />
               </folding>
@@ -201,19 +201,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/pacmanMap.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="255">
+              <caret line="94" column="22" lean-forward="true" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+              <folding>
+                <element signature="e#20#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/ground.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <element signature="e#31#69#0" expanded="true" />
+                <element signature="e#30#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -256,9 +259,10 @@
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/map.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/wall.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/coin.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/pacmanMap.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/pacman.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/coin.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/ground.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/pacmanMap.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" />
       </list>
     </option>
@@ -358,7 +362,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543291607395" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543292743043" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../snake" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -807,20 +811,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/wall.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/coin.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="16" selection-end-column="1" />
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
           <folding>
             <element signature="e#30#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/coin.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/wall.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#30#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/pacmanMap.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="94" column="22" lean-forward="true" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/ground.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#30#49#0" expanded="true" />
           </folding>
@@ -837,16 +861,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/pacmanMap.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Component/pacman.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="238">
           <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="e#30#49#0" expanded="true" />
@@ -856,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="137" column="60" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
+        <state relative-caret-position="259">
+          <caret line="142" column="29" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
           <folding>
             <element signature="e#20#39#0" expanded="true" />
           </folding>

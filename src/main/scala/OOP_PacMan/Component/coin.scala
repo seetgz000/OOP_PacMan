@@ -4,7 +4,7 @@ import java.io.File
 
 import scalafx.scene.image.{Image, ImageView}
 
-trait coin extends ImageView{
+class coin extends ImageView{
   val imageW = 23// set image Width
   val imageH = imageW // set image Height
   var coinfile = new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString
