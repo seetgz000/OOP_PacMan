@@ -12,6 +12,7 @@ import scalafx.scene.text.Font
 import scalafx.stage.{Modality, Stage}
 import Database.Database
 import OOP_PacMan.controller.{PlayGameController, GameOverController}
+import OOP_PacMan.ghost.Ghost
 import User.Players
 import scalafx.beans.property.DoubleProperty
 import scalafx.collections.ObservableBuffer
@@ -57,6 +58,8 @@ object Main extends JFXApp {
     stage.scene().setRoot(roots2)
     stage.setMaxWidth(423)
     stage.setMinWidth(423)
+
+    Ghost.preparingGhost
 
     showGameCanvas(roots2)
   }
@@ -123,7 +126,11 @@ object Main extends JFXApp {
       }
 
       children = List(
-        pacman
+        pacman,
+        Ghost.purpleGhost,
+        Ghost.blueGhost,
+        Ghost.coralGhost,
+        Ghost.redGhost
       )
     }
     root.getChildren.add(group)

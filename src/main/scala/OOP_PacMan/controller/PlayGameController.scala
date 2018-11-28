@@ -3,6 +3,7 @@ package OOP_PacMan.controller
 import java.io.{File, FileInputStream}
 
 import OOP_PacMan.Main
+import OOP_PacMan.ghost.Ghost
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
@@ -26,8 +27,8 @@ class PlayGameController(
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          var pauseRoot: StackPane
-                        )  {
+                          private var pauseRoot: StackPane
+                        ) {
 
   var map1 = Array(
     //                      1 1 1 1 1 1 1 1
@@ -127,11 +128,13 @@ class PlayGameController(
   }
 
   //for pause pop up
-  def openPause()={
+  def openPause(action:ActionEvent)={
+    Ghost.animationTimer.stop()
     pauseRoot.toFront()
   }
 
-  def closePause()={
+  def closePause(action: ActionEvent)={
+    Ghost.animationTimer.start()
     pauseRoot.toBack()
   }
 
