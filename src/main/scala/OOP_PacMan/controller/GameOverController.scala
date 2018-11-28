@@ -15,9 +15,10 @@ class GameOverController(
 
                            ) {
 
-  var dialogStage: Stage = null
+  var dialogStage: Stage = new Stage
+//  dialogStage.asInstanceOf[GameOverController]
   private var _players: Players = null
-  var okClicked = false
+  var okClicked: Boolean = false
 
   def players = _players
 

@@ -51,6 +51,7 @@ object Coin {
         score.set(score.get + 10)
 
         thisCoin.visible = false
+      }else{
       }
         thisCoin = PacmanMap.coinList.take(row).last
 
