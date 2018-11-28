@@ -16,7 +16,7 @@ object PacmanMap {
   var x = 0
   var y = 0
 
-//  var wallfile = new File("src/main/resource/OOP_PacMan/image/wall.png").toURI.toURL.toString
+//  var wallfile = new File ("src/main/resource/OOP_PacMan/image/wall.png").toURI.toURL.toString
 //  var groundfile = new File("src/main/resource/OOP_PacMan/image/ground.png").toURI.toURL.toString
 //  var coinfile = new File("src/main/resource/OOP_PacMan/image/coin.png").toURI.toURL.toString
 
@@ -98,3 +98,4 @@ object PacmanMap {
   }
 
 }
+
