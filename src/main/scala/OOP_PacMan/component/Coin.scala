@@ -39,9 +39,11 @@ object Coin {
       val localCoinW = localCoin.getWidth/4
       val localCoinH = localCoin.getHeight/4
 
-      if (localNode.intersects(localCoinX, localCoinY, localCoinW, localCoinH)){
+      if ((localNode.intersects(localCoinX, localCoinY, localCoinW, localCoinH))
+        && thisCoin.isVisible){
         /** "Remove" the coin when collide with Pacman */
         thisCoin.visible = false
+      }else{
       }
       thisCoin = PacmanMap.coinList.take(row).last
     }
