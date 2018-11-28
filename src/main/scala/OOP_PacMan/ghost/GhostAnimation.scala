@@ -30,13 +30,13 @@ object GhostAnimation extends Movement {
   val purpleGhost = new Ghost(192, 120)
   purpleGhost.setImage(purpleGhostImg)
 
-  val blueGhost = new Ghost(25, 520)
+  val blueGhost = new Ghost(192, 300)
   blueGhost.setImage(blueGhostImg)
 
   val coralGhost = new Ghost(360, 90)
   coralGhost.setImage(coralGhostImg)
 
-  val redGhost = new Ghost(360, 400) //y =500
+  val redGhost = new Ghost(360, 450) //y =500
   redGhost.setImage(redGhostImg)
 
   //set timers for each direction given
@@ -69,20 +69,20 @@ object GhostAnimation extends Movement {
     if (frameCount2 >= 50) {
       val random = new Random()
       randomNoPurple = start + random.nextInt((end - start) + 1)
-//      randomNoBlue = start + random.nextInt((end - start) + 1)
+      randomNoBlue = start + random.nextInt((end - start) + 1)
       randomNoCoral = start + random.nextInt((end - start) + 1)
-//      randomNoRed = start + random.nextInt((end - start) + 1)
+      randomNoRed = start + random.nextInt((end - start) + 1)
       frameCount2 = 0
     }
 
     //where ghosts start moving
     movement(purpleGhost, randomNoPurple, 6)
 
-//    movement(blueGhost, randomNoBlue, 6)
+    movement(blueGhost, randomNoBlue, 6)
 
     movement(coralGhost, randomNoCoral, 6)
 
-//    movement(redGhost, randomNoRed, 6)
+    movement(redGhost, randomNoRed, 6)
 
 
     if(pacman.getBoundsInParent().intersects(purpleGhost.getBoundsInParent())||

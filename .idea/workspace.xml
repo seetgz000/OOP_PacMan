@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/myDB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Movement.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Movement.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,7 +60,7 @@
           <entry key="java" value="24" />
           <entry key="name" value="1" />
           <entry key="sbt" value="4" />
-          <entry key="scala" value="66" />
+          <entry key="scala" value="67" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
@@ -69,7 +70,7 @@
           <entry key="Image" value="2" />
           <entry key="JAVA" value="24" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Scala" value="66" />
+          <entry key="Scala" value="67" />
           <entry key="XML" value="9" />
           <entry key="sbt" value="4" />
         </counts>
@@ -78,12 +79,12 @@
         <counts>
           <entry key="fxml" value="13" />
           <entry key="sbtShell" value="14" />
-          <entry key="scala" value="9373" />
+          <entry key="scala" value="9418" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Scala" value="9373" />
+          <entry key="Scala" value="9418" />
           <entry key="XML" value="13" />
           <entry key="sbtShell" value="14" />
         </counts>
@@ -169,8 +170,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+                <state relative-caret-position="1095">
+                  <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
                   <folding>
                     <element signature="e#31#69#0" expanded="true" />
                   </folding>
@@ -181,17 +182,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/GameOverController.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
+                <state relative-caret-position="-425">
                   <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="188">
-                  <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+                <state relative-caret-position="834">
+                  <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
                   <folding>
                     <element signature="e#20#39#0" expanded="true" />
                   </folding>
@@ -199,14 +200,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="35">
-                  <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+                <state relative-caret-position="289">
+                  <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
                   <folding>
                     <element signature="e#26#45#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/component/Ghost.scala">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -223,8 +233,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Movement.scala">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-85">
-                  <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+                <state relative-caret-position="289">
+                  <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -237,7 +247,7 @@
             <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Movement.scala">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-1292">
-                  <caret line="20" column="71" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+                  <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
                 </state>
               </provider>
             </entry>
@@ -258,6 +268,7 @@
       <find>last</find>
       <find>clean</find>
       <find>text</find>
+      <find>GhostAnimation</find>
     </findStrings>
     <replaceStrings>
       <replace>OOP_PacMan</replace>
@@ -292,8 +303,8 @@
         <option value="$PROJECT_DIR$/src/main/resource/OOP_PacMan/view/PlayGame3.fxml" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/PacmanMap.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Movement.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala" />
       </list>
     </option>
   </component>
@@ -429,7 +440,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543414891884" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543416013161" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Practical/Practical8" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -912,29 +923,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/component/Ghost.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/component/Pacman.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="21" />
           <folding>
             <element signature="e#30#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -949,10 +943,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/PlayGameController.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#31#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Movement.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="289">
+          <caret line="28" column="12" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -963,29 +967,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/component/Ghost.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="52" column="22" lean-forward="true" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding>
-            <element signature="e#26#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/controller/GameOverController.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="-425">
           <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+        <state relative-caret-position="834">
+          <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
           <folding>
             <element signature="e#20#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/OOP_PacMan/ghost/GhostAnimation.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="93" column="9" lean-forward="true" selection-start-line="93" selection-start-column="9" selection-end-line="93" selection-end-column="9" />
+          <folding>
+            <element signature="e#26#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

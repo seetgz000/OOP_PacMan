@@ -18,8 +18,8 @@ trait Movement {
   var moveableRight = Array(0)
 
   /** ghost movement */
-  def movement(node: ImageView, directionNo: Int, speed: Int): Unit = {
-    var nodeTester = new Ghost(node.x.value, node.y.value)
+  def movement(node: Ghost, directionNo: Int, speed: Int): Unit = {
+    var nodeTester = new Ghost(node.getX, node.getY)
 
     var thisWall: Node = PacmanMap.wallList.head
 
