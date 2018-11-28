@@ -21,8 +21,9 @@ import scalafx.scene.image.{Image, ImageView}
 import scalafx.scene.input.KeyCode
 import scalafx.scene.layout.AnchorPane
 import scalafx.util.Duration
+import OOP_PacMan.component.Coin.score
 
-object Main extends JFXApp with Movement{
+object Main extends JFXApp with Movement  {
 
   Database.setupDB()
   val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
@@ -44,8 +45,10 @@ object Main extends JFXApp with Movement{
 
   /**retrieve database names and score*/
   val Userlist = new ObservableBuffer[Players]()
+//  val HighScoreList = new ObservableBuffer[Players]()
 
   Userlist ++= Players.getAllUsers
+//  HighScoreList ++= Players.highestScore
 
   /**new pacman*/
   var pacman = new Pacman
@@ -58,6 +61,7 @@ object Main extends JFXApp with Movement{
 
   /** play game page*/
   def playGame(): Unit = {
+    Coin.score.value = 0
     val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);

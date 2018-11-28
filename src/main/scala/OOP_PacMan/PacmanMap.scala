@@ -30,8 +30,6 @@ object PacmanMap {
 
   def showMap(flow: FlowPane, mapLayout: Array[Array[Int]]): Unit = {
 
-
-
     var length = 0 // array length
     var lengthcount = 0
     /** search for longest length */

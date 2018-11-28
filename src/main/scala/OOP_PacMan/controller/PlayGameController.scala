@@ -3,8 +3,7 @@ package OOP_PacMan.controller
 import java.io.{File, FileInputStream}
 
 import OOP_PacMan.component.{Coin, Wall}
-import OOP_PacMan.Main
-import OOP_PacMan.PacmanMap
+import OOP_PacMan.{Main, Music, PacmanMap}
 import OOP_PacMan.ghost.GhostAnimation
 import User.Players
 import javafx.collections.ObservableList
@@ -13,7 +12,7 @@ import scalafx.beans.property.{DoubleProperty, IntegerProperty, StringProperty}
 import scalafx.scene
 import scalafx.scene.{Node, Scene, SubScene}
 import scalafx.scene.canvas.Canvas
-import scalafx.scene.control.Label
+import scalafx.scene.control.{Label, TableColumn, TableView}
 import scalafx.scene.effect.DropShadow
 import scalafx.scene.image.{Image, ImageView}
 import javafx.scene.input.KeyCode
@@ -29,21 +28,16 @@ import scalafx.beans.binding.Bindings
 
 
 @sfxml
-class PlayGameController(
+class PlayGameController (
                           private var flow: FlowPane,
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
                           private var pauseRoot: StackPane,
-                          private var scoreText: Text
-                        ) {
+                          private var scoreText: Text,
+                          private var scoreLabel : Label,
+                        ) extends Music {
 
-  val die =new Media (new File("src/main/resource/OOP_PacMan/audio/die.wav").toURI.toURL.toString)
-  val AHH =new Media (new File("src/main/resource/OOP_PacMan/audio/AHH.wav").toURI.toURL.toString)
-  val background =new Media (new File("src/main/resource/OOP_PacMan/audio/retrobackground.mp3").toURI.toURL.toString)
-
-
-  var backgroundmusic =  new MediaPlayer(background)
   backgroundmusic.play
 
   var map1 = Array(
@@ -75,32 +69,46 @@ class PlayGameController(
   flow.vgap = 1
   flow.hgap = 1
 
+//  private var _players: Players = null
+//
+//  def players = _players
+//
+//  def players_=(x: Players) {
+//   _players = x
+//    scoreLabel.text = _players.score.value.toString
+//  }
+
 
   scoreText.textProperty().bind(Bindings.createStringBinding(() =>(" " + score.get()),score))
+
 
   /** To print out image according array */
   PacmanMap.showMap(flow, map1)
 
 
 
+
   def quitGame(action:ActionEvent)={
-    backgroundmusic.stop
     score.value = 0
     Main.backToMain()
     GhostAnimation.animationTimer.stop()
+    backgroundmusic.stop()
   }
 
   //for pause pop up
   def openPause(action:ActionEvent)={
     GhostAnimation.animationTimer.stop()
+    backgroundmusic.stop()
     pauseRoot.toFront()
   }
 
   def closePause(action: ActionEvent)={
     GhostAnimation.animationTimer.start()
+    backgroundmusic.play()
     pauseRoot.toBack()
   }
 
   pauseRoot.toBack()
+
 
 }

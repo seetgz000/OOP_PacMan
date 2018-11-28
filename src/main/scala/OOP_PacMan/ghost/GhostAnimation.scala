@@ -4,7 +4,7 @@ import java.io.File
 
 import OOP_PacMan.component.{Coin, Ghost}
 import OOP_PacMan.Main.pacman
-import OOP_PacMan.{Main, Movement}
+import OOP_PacMan.{Main, Movement, Music}
 import scalafx.scene.image.{Image, ImageView}
 
 import scala.language.postfixOps
@@ -19,7 +19,7 @@ import scalafx.util.Duration
 import scala.util.Random
 
 
-object GhostAnimation extends Movement {
+object GhostAnimation extends Movement with Music {
 
   /** set ghosts images */
   val purpleGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/purpleghost-down.png").toURI.toURL.toString)
@@ -115,14 +115,14 @@ object GhostAnimation extends Movement {
 
   //when pacman loses
   def die() {
+    backgroundmusic.stop()
     val timer = new PauseTransition(Duration(2000))
-
       animationTimer.stop()
       //death animation
       pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif")
         .toURI.toURL.toString))
       timer.onFinished = e => {
-        Coin.score.value = 0
+//       Coin.score.value = 0
         Main.backToMain()
         pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif")
           .toURI.toURL.toString))

@@ -25,7 +25,6 @@ class Coin extends ImageView{
 object Coin {
   var score = IntegerProperty(0)
 
-
   def checkCoinCollision(node: Node): Unit = {
 
     var thisCoin: Node = PacmanMap.coinList.head
@@ -49,7 +48,6 @@ object Coin {
         && thisCoin.isVisible){
         /** "Remove" the coin when collide with Pacman */
         score.set(score.get + 10)
-
         thisCoin.visible = false
       }else{
       }

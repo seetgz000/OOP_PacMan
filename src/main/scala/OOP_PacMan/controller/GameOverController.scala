@@ -1,22 +1,26 @@
 package OOP_PacMan.controller
 
-import scalafx.scene.control.{TextField, TableColumn, Label, Alert}
+import scalafx.scene.control.{Alert, Label, TableColumn, TextField}
 import scalafxml.core.macros.sfxml
 import scalafx.stage.Stage
 import User.Players
 import scalafx.Includes._
 import scalafx.event.ActionEvent
 import OOP_PacMan.Main
+import OOP_PacMan.component.Coin
+import OOP_PacMan.component.Coin.score
+import scalafx.beans.binding.Bindings
+import scalafx.scene.text.Text
 
 @sfxml
 class GameOverController(
 
-  private val  name : TextField
+  private val  name : TextField,
+  private val scorel : Text
 
                            ) {
 
   var dialogStage: Stage = new Stage
-//  dialogStage.asInstanceOf[GameOverController]
   private var _players: Players = null
   var okClicked: Boolean = false
 
@@ -26,6 +30,9 @@ class GameOverController(
     _players = x
     name.text = _players.name.value
   }
+
+  scorel.textProperty().bind(Bindings.createStringBinding(() =>(" " + score.get()),score))
+
 
   def handleOk(action: ActionEvent) {
 

@@ -11,6 +11,7 @@ import scalafx.Includes._
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.control.TableView.TableViewSelectionModel
 import scalikejdbc.DB
+import OOP_PacMan.component.Coin.score
 
 
 
@@ -33,12 +34,14 @@ class UserController (
     _.value.score
   }
 
+
+
   def backtoMain = {
     Main.backToMain()
   }
 
   def handleNewPlayer(action: ActionEvent) = {
-    val player = new Players("Please Enter Your Name", 200)
+    val player = new Players("Please Enter Your Name", score.get)
     val okClicked = Main.showAddNew(player);
     if (okClicked) {
       Main.Userlist += player
