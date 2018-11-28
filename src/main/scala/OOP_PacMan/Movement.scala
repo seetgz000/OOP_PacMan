@@ -5,8 +5,7 @@ import java.io.File
 import OOP_PacMan.component.{Coin, Ghost, Pacman}
 import scalafx.scene.Node
 import scalafx.Includes._
-import scalafx.animation.{AnimationTimer, PauseTransition}
-import scalafx.scene.image.{Image, ImageView}
+import scalafx.scene.image.{ ImageView}
 import scalafx.scene.input.KeyCode
 import scalafx.scene.shape.Rectangle
 import scalafx.util.Duration
@@ -227,19 +226,6 @@ trait Movement {
       case _ =>
     }
   } //end movement
-
-  //when pacman loses
-//  def die(animation:AnimationTimer,n){
-//    val timer = new PauseTransition(Duration(2000))
-//    animation.stop()
-//    //death animation
-//    Main.pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif").toURI.toURL.toString))
-//    timer.onFinished = e => {
-//      Main.backToMain()
-//      Main.pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif").toURI.toURL.toString))
-//    } //end die
-//    timer.play()
-//  }
 
 }
 

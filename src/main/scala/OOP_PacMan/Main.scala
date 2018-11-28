@@ -43,16 +43,21 @@ object Main extends JFXApp with Movement{
     }
   }
 
+  /**retrieve database names and score*/
   val Userlist = new ObservableBuffer[Players]()
 
   Userlist ++= Players.getAllUsers
+
+  /**new pacman*/
+  var pacman = new Pacman
+
 
   /** close game */
   def closeGame() = {
     stage.close()
   }
 
-  //play game page
+  /** play game page*/
   def playGame(): Unit = {
     val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
@@ -65,20 +70,16 @@ object Main extends JFXApp with Movement{
     Ghost.preparingGhost
 
     showGameCanvas(roots2)
+    Ghosts.preparingGhost()
+
   }
 
 
   def showGameCanvas(root: AnchorPane): Unit = {
+    pacman.translateX() = 0
+    pacman.translateY() = 0
 
     val group = new Group() {
-
-//      var thisWall: Node = PacmanMap.wallList.head
-//      var moveableUp = Array(0)
-//      var moveableDown = Array(0)
-//      var moveableLeft = Array(0)
-//      var moveableRight = Array(0)
-//      var pacmanTester = new Pacman
-      var pacman = new Pacman
 
       stage.scene().onKeyPressed = k =>{
 
@@ -89,31 +90,13 @@ object Main extends JFXApp with Movement{
 
       children = List(
         pacman,
-        Ghost.purpleGhost,
-        Ghost.blueGhost,
-        Ghost.coralGhost,
-        Ghost.redGhost
+        Ghosts.purpleGhost,
+        Ghosts.blueGhost,
+        Ghosts.coralGhost,
+        Ghosts.redGhost
       )
-//
-//      if(pacman.localToScene(pacman.getBoundsInLocal()).intersects(Ghosts.purpleGhost.localToScene(
-//        Ghosts.purpleGhost.getBoundsInLocal()))){
-//        println("startTime")
-//        val timer = new PauseTransition(Duration(2000))
-//        animationTimer.stop()
-//        //death animation
-//        pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif")
-//          .toURI.toURL.toString))
-//
-//        timer.onFinished = e => {
-//          Main.backToMain()
-//          pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif")
-//            .toURI.toURL.toString))
-//        } //end die
-//        timer.play()
-//      }
-    }
+    }//end group
     root.getChildren.add(group)
-
   }//end showgamecanvas
 
 

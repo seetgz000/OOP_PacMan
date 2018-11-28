@@ -6,6 +6,7 @@ import OOP_PacMan.component.Wall
 import OOP_PacMan.Main
 import OOP_PacMan.ghost.Ghost
 import OOP_PacMan.PacmanMap
+import OOP_PacMan.ghost.Ghosts
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
@@ -69,6 +70,7 @@ class PlayGameController(
 
   def quitGame(action:ActionEvent)={
     Main.backToMain()
+    Ghosts.stopGhosts()
   }
 
   //for pause pop up
