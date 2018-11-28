@@ -40,6 +40,7 @@ object PacmanMap {
         if (length <= mapLayout(row).length) {
           length = mapLayout(row).length }}}
 
+    var flowWidth = flow.setMinWidth((imageW+1)*length)
     flow.setMinWidth((imageW+1)*length)
 
     var lastWallIndex: Int = 0

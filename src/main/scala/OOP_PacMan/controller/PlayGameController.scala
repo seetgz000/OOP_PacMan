@@ -90,6 +90,7 @@ class PlayGameController(
 
   def quitGame(action:ActionEvent)={
     backgroundmusic.stop
+    score.value = 0
     Main.backToMain()
   }
 
