@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
@@ -14,9 +15,10 @@
             <GridPane maxWidth="400.0" prefHeight="54.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
                   <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="SCORE : " textFill="WHITE" />
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="124.0" styleClass="font" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
+                  
                   <Label fx:id="highScoreLabel" alignment="CENTER" prefHeight="25.0" prefWidth="129.0" styleClass="font" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="HIGH SCORE : " textFill="WHITE" GridPane.columnIndex="2" />
+                  <Text fx:id="scoreText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font" text="0" textAlignment="CENTER" wrappingWidth="142.0859375" GridPane.rowIndex="1" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
