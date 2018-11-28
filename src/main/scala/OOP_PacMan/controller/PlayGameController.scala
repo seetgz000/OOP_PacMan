@@ -69,15 +69,6 @@ class PlayGameController (
   flow.vgap = 1
   flow.hgap = 1
 
-//  private var _players: Players = null
-//
-//  def players = _players
-//
-//  def players_=(x: Players) {
-//   _players = x
-//    scoreLabel.text = _players.score.value.toString
-//  }
-
 
   scoreText.textProperty().bind(Bindings.createStringBinding(() =>(" " + score.get()),score))
 

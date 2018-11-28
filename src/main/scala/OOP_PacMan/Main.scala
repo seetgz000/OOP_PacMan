@@ -45,10 +45,9 @@ object Main extends JFXApp with Movement  {
 
   /**retrieve database names and score*/
   val Userlist = new ObservableBuffer[Players]()
-//  val HighScoreList = new ObservableBuffer[Players]()
 
   Userlist ++= Players.getAllUsers
-//  HighScoreList ++= Players.highestScore
+
 
   /**new pacman*/
   var pacman = new Pacman
