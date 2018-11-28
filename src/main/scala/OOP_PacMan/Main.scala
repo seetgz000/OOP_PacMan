@@ -93,9 +93,9 @@ object Main extends JFXApp with Movement{
       children = List(
         pacman,
         GhostAnimation.purpleGhost,
-        GhostAnimation.blueGhost,
+//        GhostAnimation.blueGhost,
         GhostAnimation.coralGhost,
-        GhostAnimation.redGhost
+//        GhostAnimation.redGhost
       )
     }//end group
     root.getChildren.add(group)

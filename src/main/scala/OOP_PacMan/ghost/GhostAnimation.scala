@@ -2,7 +2,7 @@ package OOP_PacMan.ghost
 
 import java.io.File
 
-import OOP_PacMan.component.Ghost
+import OOP_PacMan.component.{Coin, Ghost}
 import OOP_PacMan.Main.pacman
 import OOP_PacMan.{Main, Movement}
 import scalafx.scene.image.{Image, ImageView}
@@ -15,6 +15,7 @@ import scalafx.scene.input.KeyCode
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.Rectangle
 import scalafx.util.Duration
+
 import scala.util.Random
 
 
@@ -67,21 +68,21 @@ object GhostAnimation extends Movement {
     frameCount2 += 1
     if (frameCount2 >= 50) {
       val random = new Random()
-      randomNoPurple = start + random.nextInt(4)
-      randomNoBlue = start + random.nextInt(4)
-      randomNoCoral = start + random.nextInt(4)
-      randomNoRed = start + random.nextInt(4)
+      randomNoPurple = start + random.nextInt((end - start) + 1)
+//      randomNoBlue = start + random.nextInt((end - start) + 1)
+      randomNoCoral = start + random.nextInt((end - start) + 1)
+//      randomNoRed = start + random.nextInt((end - start) + 1)
       frameCount2 = 0
     }
 
     //where ghosts start moving
     movement(purpleGhost, randomNoPurple, 6)
 
-    movement(blueGhost, randomNoBlue, 6)
+//    movement(blueGhost, randomNoBlue, 6)
 
     movement(coralGhost, randomNoCoral, 6)
 
-    movement(redGhost, randomNoRed, 6)
+//    movement(redGhost, randomNoRed, 6)
 
 
     if(pacman.getBoundsInParent().intersects(purpleGhost.getBoundsInParent())||
@@ -109,6 +110,7 @@ object GhostAnimation extends Movement {
     redGhost.translateY() = 0
 
     animationTimer.start()
+
   }
 
   //when pacman loses
@@ -120,6 +122,7 @@ object GhostAnimation extends Movement {
       pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif")
         .toURI.toURL.toString))
       timer.onFinished = e => {
+        Coin.score.value = 0
         Main.backToMain()
         pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif")
           .toURI.toURL.toString))
