@@ -2,12 +2,13 @@ package OOP_PacMan.controller
 
 import java.io.{File, FileInputStream}
 
-import OOP_PacMan.component.Wall
+import OOP_PacMan.component.{Coin, Wall}
 import OOP_PacMan.Main
 import OOP_PacMan.PacmanMap
+import User.Players
 import javafx.collections.ObservableList
 import scalafx.Includes._
-import scalafx.beans.property.DoubleProperty
+import scalafx.beans.property.{DoubleProperty, IntegerProperty, StringProperty}
 import scalafx.scene
 import scalafx.scene.{Node, Scene, SubScene}
 import scalafx.scene.canvas.Canvas
@@ -20,6 +21,9 @@ import scalafx.scene.layout._
 import scalafx.scene.paint.Color
 import scalafx.scene.text.{Font, Text}
 import scalafxml.core.macros.sfxml
+import OOP_PacMan.component.Coin.score
+import javafx.beans.property.SimpleIntegerProperty
+import scalafx.beans.binding.Bindings
 
 
 @sfxml
@@ -29,50 +33,57 @@ class PlayGameController(
                           private var pane: Pane,
                           private var hbox: HBox,
                           private val escPause : ImageView,
+                          private var scoreText : Text,
                           private var highScoreLabel : Label
-                        )  {
+                        ) {
 
   var map1 = Array(
     //                      1 1 1 1 1 1 1 1
     //    1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
-    Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), // 1
-    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 2
-    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 3
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 4
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 5
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 6
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 7
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 8
-    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 9
-    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 10
-    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 11
-    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 12
-    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 13
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 14
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 15
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 16
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 17
-    Array(1,2,1,0,0,0,0,1,2,1,0,0,0,0,1,2,1), // 18
-    Array(1,2,1,1,1,1,1,1,2,1,1,1,1,1,1,2,1), // 19
-    Array(1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1), // 20
-    Array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)) // 21
+    Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), // 1
+    Array(1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1), // 2
+    Array(1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1), // 3
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 4
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 5
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 6
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 7
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 8
+    Array(1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1), // 9
+    Array(1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1), // 10
+    Array(1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1), // 11
+    Array(1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1), // 12
+    Array(1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1), // 13
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 14
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 15
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 16
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 17
+    Array(1, 2, 1, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 1, 2, 1), // 18
+    Array(1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1), // 19
+    Array(1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1), // 20
+    Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) // 21
 
 
   flow.vgap = 1
   flow.hgap = 1
 
 
+  scoreText.textProperty().bind(Bindings.createStringBinding(() =>(" " + score.get()),score))
+
   /** To print out image according array */
   PacmanMap.showMap(flow, map1)
-
 
 
   /** pause game */
   val escPauseImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
   escPause.setImage(escPauseImg)
 
-  def quitGame(action:ActionEvent)={
+  def quitGame(action: ActionEvent) = {
     Main.backToMain()
   }
 
+
 }
+
+
+
+
