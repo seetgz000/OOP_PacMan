@@ -76,7 +76,6 @@ trait Movement {
         nodeTester.translateX() = node.getTranslateX
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
-          //println("Blocks " +thisWall.layoutX.value + " "+ thisWall.layoutY.value)
 
           if (!nodeTester.localToScene(node.getBoundsInLocal()).intersects(
             thisWall.localToScene(thisWall.getBoundsInLocal()))) {
@@ -92,10 +91,6 @@ trait Movement {
         } else {
           moveableDown = Array(0)
         }
-
-        //println(node.getTranslateX + " "+ node.getTranslateY)
-
-      //pritnln(node.getTransl)
 
       //right
       case 4

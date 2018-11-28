@@ -121,7 +121,6 @@ object Main extends JFXApp with Movement{
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.Parent]
     val control = loader.getController[GameOverController#Controller]
-    val instanceControl = control.asInstanceOf[GameOverController]
     val dialog = new Stage() {
       initModality(Modality.APPLICATION_MODAL)
       initOwner(stage)
@@ -130,7 +129,7 @@ object Main extends JFXApp with Movement{
         stylesheets add getClass.getResource("style/Style.css").toExternalForm
       }
     }
-    instanceControl.players = players
+    control.players = players
     control.dialogStage = dialog
     dialog.showAndWait()
     control.okClicked
