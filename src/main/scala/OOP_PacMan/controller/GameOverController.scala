@@ -1,19 +1,25 @@
 package OOP_PacMan.controller
 
-import scalafx.scene.control.{TextField, TableColumn, Label, Alert}
+import scalafx.scene.control.{Alert, Label, TableColumn, TextField}
 import scalafxml.core.macros.sfxml
 import scalafx.stage.Stage
 import User.Players
 import scalafx.Includes._
 import scalafx.event.ActionEvent
 import OOP_PacMan.Main
+import OOP_PacMan.component.Coin
 
 @sfxml
 class GameOverController(
 
-  private val  name : TextField
+  private val  name : TextField,
+  private var score: Label
 
                            ) {
+
+
+
+  score.text = Coin.score.get.toString()
 
   var dialogStage: Stage = new Stage
 //  dialogStage.asInstanceOf[GameOverController]

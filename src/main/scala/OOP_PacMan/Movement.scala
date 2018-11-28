@@ -145,6 +145,7 @@ trait Movement {
           pacman.translateY() = pacman.translateY.value - speed
           Coin.checkCoinCollision(pacman)
           pacman.playMovingSound
+          pacman.rotate = -90
           moveableUp = Array(0)
         } else {
           moveableUp = Array(0)
@@ -169,6 +170,7 @@ trait Movement {
           pacman.translateX() = pacman.getTranslateX - speed
           Coin.checkCoinCollision(pacman)
           pacman.playMovingSound
+          pacman.rotate = -180
           moveableLeft = Array(0)
         } else {
           moveableLeft = Array(0)
@@ -193,6 +195,7 @@ trait Movement {
           pacman.translateY() = pacman.getTranslateY + speed
           Coin.checkCoinCollision(pacman)
           pacman.playMovingSound
+          pacman.rotate = 90
           moveableDown = Array(0)
         } else {
           moveableDown = Array(0)
@@ -217,6 +220,7 @@ trait Movement {
           pacman.translateX() = pacman.getTranslateX + speed
           Coin.checkCoinCollision(pacman)
           pacman.playMovingSound
+          pacman.rotate = 0
           moveableRight = Array(0)
         } else {
           moveableRight = Array(0)
