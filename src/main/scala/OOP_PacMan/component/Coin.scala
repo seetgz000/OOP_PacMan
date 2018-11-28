@@ -4,8 +4,10 @@ import java.io.File
 
 import OOP_PacMan.PacmanMap
 import scalafx.Includes._
+import scalafx.beans.property.IntegerProperty
 import scalafx.scene.Node
 import scalafx.scene.image.{Image, ImageView}
+import OOP_PacMan.controller.PlayGameController
 
 class Coin extends ImageView{
   val imageW = 23// set image Width
@@ -14,12 +16,16 @@ class Coin extends ImageView{
   var coin = new Image(coinfile,imageW,imageH,true,false)
   val coinStyle: Iterable[String] = List("coin")
 
+
   fitWidth = imageW
   image = coin
   styleClass= coinStyle
 }
 
 object Coin {
+  var score = IntegerProperty(0)
+
+
   def checkCoinCollision(node: Node): Unit = {
 
     var thisCoin: Node = PacmanMap.coinList.head
@@ -39,11 +45,16 @@ object Coin {
       val localCoinW = localCoin.getWidth/4
       val localCoinH = localCoin.getHeight/4
 
-      if (localNode.intersects(localCoinX, localCoinY, localCoinW, localCoinH)){
+      if ((localNode.intersects(localCoinX, localCoinY, localCoinW, localCoinH))
+        && thisCoin.isVisible){
         /** "Remove" the coin when collide with Pacman */
+        score.set(score.get + 10)
+
         thisCoin.visible = false
+      }else{
       }
-      thisCoin = PacmanMap.coinList.take(row).last
+        thisCoin = PacmanMap.coinList.take(row).last
+
     }
   }
 }

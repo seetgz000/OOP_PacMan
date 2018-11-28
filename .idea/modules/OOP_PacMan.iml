@@ -14,22 +14,22 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: com.google.protobuf:protobuf-java:3.6.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.2:jar" level="project" />
-    <orderEntry type="library" name="sbt: mysql:mysql-connector-java:8.0.13:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.commons:commons-dbcp2:2.5.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.commons:commons-pool2:2.6.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.derby:derby:10.14.2.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.7:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.12.7:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-collection-compat_2.12:0.1.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.12:1.1.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalafx:scalafx_2.12:8.0.181-R13:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalafx:scalafxml-core-macros-sfx8_2.12:0.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalafx:scalafxml-core-sfx8_2.12:0.4:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc-core_2.12:3.3.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc-interpolation-macro_2.12:3.3.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc-interpolation_2.12:3.3.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc_2.12:3.3.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc_2.12:3.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc-interpolation_2.12:3.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc-interpolation-macro_2.12:3.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalikejdbc:scalikejdbc-core_2.12:3.3.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalafx:scalafxml-core-sfx8_2.12:0.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalafx:scalafxml-core-macros-sfx8_2.12:0.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scalafx:scalafx_2.12:8.0.181-R13:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.12:1.1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-collection-compat_2.12:0.1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.12.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.7:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.derby:derby:10.14.2.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.commons:commons-pool2:2.6.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.commons:commons-dbcp2:2.5.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: mysql:mysql-connector-java:8.0.13:jar" level="project" />
+    <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.2:jar" level="project" />
   </component>
 </module>

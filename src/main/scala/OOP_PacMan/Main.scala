@@ -74,6 +74,9 @@ object Main extends JFXApp with Movement{
   }
 
 
+  //var thisWall: Node = PacmanMap.wallList.head
+
+
   def showGameCanvas(root: AnchorPane): Unit = {
     pacman.translateX() = 0
     pacman.translateY() = 0
@@ -120,7 +123,7 @@ object Main extends JFXApp with Movement{
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.Parent]
     val control = loader.getController[GameOverController#Controller]
-
+    val instanceControl = control.asInstanceOf[GameOverController]
     val dialog = new Stage() {
       initModality(Modality.APPLICATION_MODAL)
       initOwner(stage)
@@ -129,8 +132,8 @@ object Main extends JFXApp with Movement{
         stylesheets add getClass.getResource("style/Style.css").toExternalForm
       }
     }
+    instanceControl.players = players
     control.dialogStage = dialog
-    control.players = players
     dialog.showAndWait()
     control.okClicked
   }

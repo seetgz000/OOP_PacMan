@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+
 <AnchorPane maxHeight="-Infinity" maxWidth="500.0" minHeight="-Infinity" minWidth="200.0" prefHeight="700.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.PlayGameController">
    <children>
       <BorderPane prefHeight="716.0" prefWidth="400.0" styleClass="background">
@@ -20,9 +21,10 @@
             <GridPane maxWidth="400.0" prefHeight="54.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
                   <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="SCORE : " textFill="WHITE" />
-                  <Label alignment="CENTER" prefHeight="27.0" prefWidth="124.0" styleClass="font" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
+                  
                   <Label fx:id="highScoreLabel" alignment="CENTER" prefHeight="25.0" prefWidth="129.0" styleClass="font" text="Label" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="29.0" prefWidth="199.0" styleClass="font" text="HIGH SCORE : " textFill="WHITE" GridPane.columnIndex="2" />
+                  <Text fx:id="scoreText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font" text="0" textAlignment="CENTER" wrappingWidth="142.0859375" GridPane.rowIndex="1" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

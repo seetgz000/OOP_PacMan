@@ -4,6 +4,7 @@ import java.io.File
 
 import scalafx.beans.property.DoubleProperty
 import scalafx.scene.image.{Image, ImageView}
+import scalafx.scene.media.{Media, MediaPlayer}
 
 class Pacman extends ImageView {
   /** Translation of Pacman */
@@ -18,11 +19,16 @@ class Pacman extends ImageView {
 
   /** Initialize Pacman */
 
-
     image = pacmanImg
     styleClass= pacmanStyle
     fitWidth = pacmanW
     preserveRatio = true
     x = 25
     y = 90
+
+  def playMovingSound = {
+    val move =new Media (new File("src/main/resource/OOP_PacMan/audio/move.wav").toURI.toURL.toString)
+    new MediaPlayer(move).play
+    //    player.play()
+  }
 }

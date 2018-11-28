@@ -2,13 +2,14 @@ package OOP_PacMan.controller
 
 import java.io.{File, FileInputStream}
 
-import OOP_PacMan.component.Wall
+import OOP_PacMan.component.{Coin, Wall}
 import OOP_PacMan.Main
 import OOP_PacMan.PacmanMap
 import OOP_PacMan.ghost.GhostAnimation
+import User.Players
 import javafx.collections.ObservableList
 import scalafx.Includes._
-import scalafx.beans.property.DoubleProperty
+import scalafx.beans.property.{DoubleProperty, IntegerProperty, StringProperty}
 import scalafx.scene
 import scalafx.scene.{Node, Scene, SubScene}
 import scalafx.scene.canvas.Canvas
@@ -18,9 +19,13 @@ import scalafx.scene.image.{Image, ImageView}
 import javafx.scene.input.KeyCode
 import scalafx.event.ActionEvent
 import scalafx.scene.layout._
+import scalafx.scene.media.{Media, MediaPlayer}
 import scalafx.scene.paint.Color
 import scalafx.scene.text.{Font, Text}
 import scalafxml.core.macros.sfxml
+import OOP_PacMan.component.Coin.score
+import javafx.beans.property.SimpleIntegerProperty
+import scalafx.beans.binding.Bindings
 
 
 @sfxml
@@ -31,6 +36,14 @@ class PlayGameController(
                           private var hbox: HBox,
                           private var pauseRoot: StackPane
                         ) {
+
+  val die =new Media (new File("src/main/resource/OOP_PacMan/audio/die.wav").toURI.toURL.toString)
+  val AHH =new Media (new File("src/main/resource/OOP_PacMan/audio/AHH.wav").toURI.toURL.toString)
+  val background =new Media (new File("src/main/resource/OOP_PacMan/audio/retrobackground.mp3").toURI.toURL.toString)
+
+
+  var backgroundmusic =  new MediaPlayer(background)
+  backgroundmusic.play
 
   var map1 = Array(
     //                      1 1 1 1 1 1 1 1
@@ -62,12 +75,15 @@ class PlayGameController(
   flow.hgap = 1
 
 
+  scoreText.textProperty().bind(Bindings.createStringBinding(() =>(" " + score.get()),score))
+
   /** To print out image according array */
   PacmanMap.showMap(flow, map1)
 
 
 
   def quitGame(action:ActionEvent)={
+    backgroundmusic.stop
     Main.backToMain()
     GhostAnimation.animationTimer.stop()
   }
