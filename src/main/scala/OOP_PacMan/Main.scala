@@ -66,8 +66,6 @@ object Main extends JFXApp with Movement{
 //    stage.setMaxWidth(600)
     stage.setMinWidth(423)
 
-    GhostAnimation.preparingGhost
-
     showGameCanvas(roots2)
     GhostAnimation.preparingGhost()
 

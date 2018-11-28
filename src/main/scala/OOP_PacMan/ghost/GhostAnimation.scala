@@ -63,19 +63,14 @@ object GhostAnimation extends Movement {
 
     //used to generate random numbers at timed manner(about few frames in between)
     //or ghost will be undecisive on where to go
-    frameCount += 1
-    if (frameCount >= 60) {
-      val random = new Random()
-      randomNoPurple = start + random.nextInt((end - start) + 1)
-      randomNoBlue = start + random.nextInt((end - start) + 1)
-      frameCount = 0
-    }
 
     frameCount2 += 1
     if (frameCount2 >= 50) {
       val random = new Random()
-      randomNoCoral = start + random.nextInt((end - start) + 1)
-      randomNoRed = start + random.nextInt((end - start) + 1)
+      randomNoPurple = start + random.nextInt(4)
+      randomNoBlue = start + random.nextInt(4)
+      randomNoCoral = start + random.nextInt(4)
+      randomNoRed = start + random.nextInt(4)
       frameCount2 = 0
     }
 

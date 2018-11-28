@@ -125,20 +125,20 @@ trait Movement {
   } //end movement
 
   /** pacman movement */
-  def movement(node: Node, keycode: KeyCode,speed:Int): Unit = {
-    var nodeTester = new Pacman
+  def movement(pacman: Pacman, keycode: KeyCode,speed:Int): Unit = {
+    var pacmanTester = new Pacman
     var thisWall: Node = PacmanMap.wallList.head
 
     keycode match {
 
       case KeyCode.W
       =>
-        nodeTester.translateY() = node.getTranslateY - speed
-        nodeTester.translateX() = node.getTranslateX
+        pacmanTester.translateY() = pacman.getTranslateY - speed
+        pacmanTester.translateX() = pacman.getTranslateX
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
 
-          if (!nodeTester.localToScene(nodeTester.getBoundsInLocal()).intersects(
+          if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
             thisWall.localToScene(thisWall.getBoundsInLocal()))) {
             moveableUp = moveableUp ++ Array(0)
           } else {
@@ -147,8 +147,9 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableUp.contains(1)) {
-          node.translateY() = node.translateY.value - speed
-          Coin.checkCoinCollision(node)
+          pacman.translateY() = pacman.translateY.value - speed
+          Coin.checkCoinCollision(pacman)
+          pacman.playMovingSound
           moveableUp = Array(0)
         } else {
           moveableUp = Array(0)
@@ -156,12 +157,12 @@ trait Movement {
 
       case KeyCode.A
       =>
-        nodeTester.translateX() = node.getTranslateX - speed
-        nodeTester.translateY() = node.getTranslateY
+        pacmanTester.translateX() = pacman.getTranslateX - speed
+        pacmanTester.translateY() = pacman.getTranslateY
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
 
-          if (!nodeTester.localToScene(nodeTester.getBoundsInLocal()).intersects(
+          if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
             thisWall.localToScene(thisWall.getBoundsInLocal()))) {
             moveableLeft = moveableLeft ++ Array(0)
           } else {
@@ -170,8 +171,9 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableLeft.contains(1)) {
-          node.translateX() = node.getTranslateX - speed
-          Coin.checkCoinCollision(node)
+          pacman.translateX() = pacman.getTranslateX - speed
+          Coin.checkCoinCollision(pacman)
+          pacman.playMovingSound
           moveableLeft = Array(0)
         } else {
           moveableLeft = Array(0)
@@ -179,12 +181,12 @@ trait Movement {
 
       case KeyCode.S
       =>
-        nodeTester.translateY() = node.getTranslateY + speed
-        nodeTester.translateX() = node.getTranslateX
+        pacmanTester.translateY() = pacman.getTranslateY + speed
+        pacmanTester.translateX() = pacman.getTranslateX
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
 
-          if (!nodeTester.localToScene(node.getBoundsInLocal()).intersects(
+          if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(
             thisWall.localToScene(thisWall.getBoundsInLocal()))) {
             moveableDown = moveableDown ++ Array(0)
           } else {
@@ -193,8 +195,9 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableDown.contains(1)) {
-          node.translateY() = node.getTranslateY + speed
-          Coin.checkCoinCollision(node)
+          pacman.translateY() = pacman.getTranslateY + speed
+          Coin.checkCoinCollision(pacman)
+          pacman.playMovingSound
           moveableDown = Array(0)
         } else {
           moveableDown = Array(0)
@@ -202,12 +205,12 @@ trait Movement {
 
       case KeyCode.D
       =>
-        nodeTester.translateX() = node.getTranslateX + speed
-        nodeTester.translateY() = node.getTranslateY
+        pacmanTester.translateX() = pacman.getTranslateX + speed
+        pacmanTester.translateY() = pacman.getTranslateY
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
 
-          if (!nodeTester.localToScene(node.getBoundsInLocal()).intersects(
+          if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(
             thisWall.localToScene(thisWall.getBoundsInLocal()))) {
             moveableRight = moveableRight ++ Array(0)
           } else {
@@ -216,8 +219,9 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableRight.contains(1)) {
-          node.translateX() = node.getTranslateX + speed
-          Coin.checkCoinCollision(node)
+          pacman.translateX() = pacman.getTranslateX + speed
+          Coin.checkCoinCollision(pacman)
+          pacman.playMovingSound
           moveableRight = Array(0)
         } else {
           moveableRight = Array(0)

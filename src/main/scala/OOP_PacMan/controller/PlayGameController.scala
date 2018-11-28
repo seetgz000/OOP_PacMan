@@ -34,7 +34,8 @@ class PlayGameController(
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          private var pauseRoot: StackPane
+                          private var pauseRoot: StackPane,
+                          private var scoreText: Text
                         ) {
 
   val die =new Media (new File("src/main/resource/OOP_PacMan/audio/die.wav").toURI.toURL.toString)

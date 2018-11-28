@@ -57,8 +57,6 @@ object PacmanMap {
 
           lastGroundIndex = flow.getChildren().size() - 1
           groundList += flow.getChildren.get(lastGroundIndex)
-          x += (imageW) + 1
-          nextline += 1
         }
         /** 1 = print wall */
         if (num == 1){
@@ -67,8 +65,6 @@ object PacmanMap {
 
           lastWallIndex = flow.getChildren().size() - 1
           wallList += flow.getChildren.get(lastWallIndex)
-          x += (imageW) + 1
-          nextline += 1
         }
         /** 2 = print coin */
         if (num == 2){
@@ -77,15 +73,6 @@ object PacmanMap {
 
           lastCoinIndex = flow.getChildren().size() - 1
           coinList += flow.getChildren.get(lastCoinIndex)
-          x += (imageW) + 1
-          nextline += 1
-        }
-
-        /** go down line */
-        if (nextline == mapLayout(row).length){
-          y += imageH+1
-          x = 0
-          nextline = 0 // reset
         }
       }
       /** fill up spaces so that flowpane will not messed up */
