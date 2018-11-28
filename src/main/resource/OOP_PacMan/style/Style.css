@@ -61,8 +61,25 @@
 	-fx-font-size: 42px;
 }
 
+.font-Title-Pause{
+	-fx-font-family: 'Fleftex';
+	-fx-font-size: 42px;
+}
+
+. pause-border{
+    -fx-border-color: yellow ;
+    -fx-border-width: 2;
+}
+
 #quit-button{
     -fx-background-image: url("../image/quit-button.png");
+    -fx-background-color: transparent;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+}
+
+#pause-button{
+    -fx-background-image: url("../image/pause-button.png");
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100% 100%;

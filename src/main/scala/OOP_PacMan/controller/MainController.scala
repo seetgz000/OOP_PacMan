@@ -18,13 +18,15 @@ class MainController(
                       private val pacmanV: ImageView,
                       private val close : ImageView,
                       private val directionalKeys: ImageView,
-                      private val escKey: ImageView,
+                      private val enterKey: ImageView,
+                      private val spacebar: ImageView,
                       private val introRoot:StackPane
                     ) {
 
   val closeBtnImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/close.png"))
   val directionalImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/keyboard.png"))
-  val escapeImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
+  val enterImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/enter.png"))
+  val spacebarImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/spacebar.png"))
 
   val ghost = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/4ghost-img.png"))
   val pacman = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif"))
@@ -61,7 +63,8 @@ class MainController(
   //set image for introduction pop up
   close.setImage(closeBtnImg)
   directionalKeys.setImage(directionalImg)
-  escKey.setImage(escapeImg)
+  enterKey.setImage(enterImg)
+  spacebar.setImage(spacebarImg)
 
   //set image for animation at main menu
   ghostV.setImage(ghost)

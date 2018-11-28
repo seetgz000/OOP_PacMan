@@ -5,6 +5,7 @@ import java.io.{File, FileInputStream}
 import OOP_PacMan.component.{Coin, Wall}
 import OOP_PacMan.Main
 import OOP_PacMan.PacmanMap
+import OOP_PacMan.ghost.GhostAnimation
 import User.Players
 import javafx.collections.ObservableList
 import scalafx.Includes._
@@ -33,11 +34,8 @@ class PlayGameController(
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          private val escPause : ImageView,
-                          private var scoreText : Text,
-                          private var highScoreLabel : Label
+                          private var pauseRoot: StackPane
                         ) {
-
 
   val die =new Media (new File("src/main/resource/OOP_PacMan/audio/die.wav").toURI.toURL.toString)
   val AHH =new Media (new File("src/main/resource/OOP_PacMan/audio/AHH.wav").toURI.toURL.toString)
@@ -84,14 +82,24 @@ class PlayGameController(
 
 
 
-  /** pause game */
-  val escPauseImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
-  escPause.setImage(escPauseImg)
-
   def quitGame(action:ActionEvent)={
     backgroundmusic.stop
     score.value = 0
     Main.backToMain()
+    GhostAnimation.animationTimer.stop()
   }
+
+  //for pause pop up
+  def openPause(action:ActionEvent)={
+    GhostAnimation.animationTimer.stop()
+    pauseRoot.toFront()
+  }
+
+  def closePause(action: ActionEvent)={
+    GhostAnimation.animationTimer.start()
+    pauseRoot.toBack()
+  }
+
+  pauseRoot.toBack()
 
 }
