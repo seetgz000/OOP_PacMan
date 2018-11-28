@@ -1,31 +1,18 @@
 package OOP_PacMan.controller
 
-import java.io.{File, FileInputStream}
+import java.io.File
 
-import OOP_PacMan.component.{Coin, Wall}
-import OOP_PacMan.Main
-import OOP_PacMan.PacmanMap
+import OOP_PacMan.{Main, PacmanMap}
+import OOP_PacMan.component.Coin.score
 import OOP_PacMan.ghost.GhostAnimation
 import User.Players
-import javafx.collections.ObservableList
-import scalafx.Includes._
-import scalafx.beans.property.{DoubleProperty, IntegerProperty, StringProperty}
-import scalafx.scene
-import scalafx.scene.{Node, Scene, SubScene}
-import scalafx.scene.canvas.Canvas
-import scalafx.scene.control.Label
-import scalafx.scene.effect.DropShadow
-import scalafx.scene.image.{Image, ImageView}
-import javafx.scene.input.KeyCode
+import scalafx.beans.binding.Bindings
 import scalafx.event.ActionEvent
+import scalafx.scene.control.Label
 import scalafx.scene.layout._
 import scalafx.scene.media.{Media, MediaPlayer}
-import scalafx.scene.paint.Color
-import scalafx.scene.text.{Font, Text}
+import scalafx.scene.text.Text
 import scalafxml.core.macros.sfxml
-import OOP_PacMan.component.Coin.score
-import javafx.beans.property.SimpleIntegerProperty
-import scalafx.beans.binding.Bindings
 
 
 @sfxml
@@ -35,16 +22,15 @@ class PlayGameController(
                           private var pane: Pane,
                           private var hbox: HBox,
                           private var pauseRoot: StackPane,
-                          private var scoreText: Text
+                          private var scoreText: Text,
+                          private var highScoreLabel: Label
                         ) {
 
-  val die =new Media (new File("src/main/resource/OOP_PacMan/audio/die.wav").toURI.toURL.toString)
-  val AHH =new Media (new File("src/main/resource/OOP_PacMan/audio/AHH.wav").toURI.toURL.toString)
-  val background =new Media (new File("src/main/resource/OOP_PacMan/audio/retrobackground.mp3").toURI.toURL.toString)
-
-
-  var backgroundmusic =  new MediaPlayer(background)
-  backgroundmusic.play
+  if (Players.HighestScore != None) {
+    highScoreLabel.text = Players.HighestScore.get.toString
+  } else {
+    highScoreLabel.text = 0.toString()
+  }
 
   var map1 = Array(
     //                      1 1 1 1 1 1 1 1
@@ -80,14 +66,15 @@ class PlayGameController(
 
   /** To print out image according array */
   PacmanMap.showMap(flow, map1)
-
+//  playBg
 
 
   def quitGame(action:ActionEvent)={
-    backgroundmusic.stop
+//    stopBg
+    GhostAnimation.animationTimer.stop()
+    this.flow.children.removeAll()
     score.value = 0
     Main.backToMain()
-    GhostAnimation.animationTimer.stop()
   }
 
   //for pause pop up

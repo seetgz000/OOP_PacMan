@@ -96,6 +96,13 @@ object Players extends Database {
         rs.int("score") )).list.apply()
     }
   }
+
+  val HighestScore: Option[Int]= {
+    DB readOnly { implicit session =>
+      sql"SELECT score FROM player ORDER BY score DESC FETCH FIRST 1 ROWS ONLY".map(rs =>
+        rs.int("score")).single().apply()
+    }
+}
 }
 
 

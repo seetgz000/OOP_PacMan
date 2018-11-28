@@ -2,10 +2,14 @@ package OOP_PacMan.ghost
 
 import java.io.File
 
-import OOP_PacMan.component.{Coin, Ghost}
-import OOP_PacMan.Main.pacman
 import OOP_PacMan.{Main, Movement}
 import scalafx.scene.image.{Image, ImageView}
+import scalafxml.core.{FXMLLoader, NoDependencyResolver}
+import scalafx.Includes._
+import javafx.{scene => jfxs}
+import OOP_PacMan.component.{Coin, Ghost}
+import OOP_PacMan.Main.pacman
+import OOP_PacMan.controller.PlayGameController
 
 import scala.language.postfixOps
 import scalafx.animation.{AnimationTimer, PauseTransition}
@@ -19,7 +23,7 @@ import scalafx.util.Duration
 import scala.util.Random
 
 
-object GhostAnimation extends Movement {
+object GhostAnimation extends Movement{
 
   /** set ghosts images */
   val purpleGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/purpleghost-down.png").toURI.toURL.toString)
@@ -30,13 +34,13 @@ object GhostAnimation extends Movement {
   val purpleGhost = new Ghost(192, 120)
   purpleGhost.setImage(purpleGhostImg)
 
-  val blueGhost = new Ghost(192, 300)
+  val blueGhost = new Ghost(192, 285)
   blueGhost.setImage(blueGhostImg)
 
   val coralGhost = new Ghost(360, 90)
   coralGhost.setImage(coralGhostImg)
 
-  val redGhost = new Ghost(360, 450) //y =500
+  val redGhost = new Ghost(360, 285) //y =500
   redGhost.setImage(redGhostImg)
 
   //set timers for each direction given
@@ -89,7 +93,7 @@ object GhostAnimation extends Movement {
        pacman.getBoundsInParent().intersects(blueGhost.getBoundsInParent())||
        pacman.getBoundsInParent().intersects(coralGhost.getBoundsInParent())||
        pacman.getBoundsInParent().intersects(redGhost.getBoundsInParent())){
-          die()
+      lose()
           died = true
         }
 
@@ -113,21 +117,22 @@ object GhostAnimation extends Movement {
 
   }
 
-  //when pacman loses
-  def die() {
-    val timer = new PauseTransition(Duration(2000))
 
+
+  //when pacman loses
+  def lose() {
+    val timer = new PauseTransition(Duration(2000))
       animationTimer.stop()
       //death animation
       pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanDeath.gif")
         .toURI.toURL.toString))
       timer.onFinished = e => {
-        Coin.score.value = 0
-        Main.backToMain()
+
         pacman.setImage(new Image(new File("src/main/resource/OOP_PacMan/image/pacmanGIF(fast).gif")
           .toURI.toURL.toString))
       } //end die
       timer.play()
+      Main.handleGameOver()
     }
 
   //**reserved**//

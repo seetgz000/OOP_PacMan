@@ -2,7 +2,7 @@ package OOP_PacMan.component
 
 import java.io.File
 
-import OOP_PacMan.PacmanMap
+import OOP_PacMan.{Main, PacmanMap}
 import scalafx.Includes._
 import scalafx.beans.property.IntegerProperty
 import scalafx.scene.Node
@@ -51,7 +51,9 @@ object Coin {
         score.set(score.get + 10)
 
         thisCoin.visible = false
-      }else{
+        if (score.value == (PacmanMap.coinList.size*10)){
+          Main.handleGameOver()
+        }
       }
         thisCoin = PacmanMap.coinList.take(row).last
 

@@ -29,20 +29,11 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="185.0" prefWidth="400.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="89.0" prefWidth="400.0">
+                        <HBox alignment="CENTER" prefHeight="89.0" prefWidth="400.0">
                             <children>
                                 <Button mnemonicParsing="false" onAction="#backtoMain" prefHeight="39.0" prefWidth="99.0" text="BACK">
                                     <HBox.margin>
-                                        <Insets left="20.0" top="10.0" />
-                                    </HBox.margin>
-                           <styleClass>
-                              <String fx:value="font" />
-                              <String fx:value="title-button" />
-                           </styleClass>
-                                </Button>
-                                <Button mnemonicParsing="false" onAction="#handleNewPlayer" prefHeight="39.0" prefWidth="99.0" text="NEW">
-                                    <HBox.margin>
-                                        <Insets left="20.0" top="10.0" />
+                                        <Insets top="10.0" />
                                     </HBox.margin>
                            <styleClass>
                               <String fx:value="font" />

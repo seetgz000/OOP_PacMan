@@ -1,16 +1,13 @@
 package OOP_PacMan.controller
 
 import OOP_PacMan.Main
-import Database.Database
 import User.Players
-import scalafx.scene.control.{Alert, TableCell, TableColumn, TableView}
-import scalafxml.core.macros.sfxml
-import scalafx.stage.{Modality, Stage}
-import scalafx.event.ActionEvent
 import scalafx.Includes._
+import scalafx.event.ActionEvent
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.control.TableView.TableViewSelectionModel
-import scalikejdbc.DB
+import scalafx.scene.control.{Alert, TableColumn, TableView}
+import scalafxml.core.macros.sfxml
 
 
 
@@ -35,15 +32,6 @@ class UserController (
 
   def backtoMain = {
     Main.backToMain()
-  }
-
-  def handleNewPlayer(action: ActionEvent) = {
-    val player = new Players("Please Enter Your Name", 200)
-    val okClicked = Main.showAddNew(player);
-    if (okClicked) {
-      Main.Userlist += player
-      player.save()
-    }
   }
 
    def handleDeletePerson(action : ActionEvent) = {

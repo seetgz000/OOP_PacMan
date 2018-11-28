@@ -58,7 +58,7 @@ object Main extends JFXApp with Movement{
 
   /** play game page*/
   def playGame(): Unit = {
-    val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
+    val resource = getClass.getResourceAsStream("view/PlayGame.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
     loader.load(resource);
     val roots2 = loader.getRoot[jfxs.layout.AnchorPane]
@@ -112,6 +112,18 @@ object Main extends JFXApp with Movement{
     stage.scene().setRoot(roots)
   }
 
+  def handleGameOver() = {
+    GhostAnimation.animationTimer.stop()
+    showHighScore()
+    val player = new Players("Please Enter Your Name", Coin.score.value)
+    showAddNew(player)
+
+    Userlist += player
+    player.save()
+    Coin.score.value = 0
+
+  }
+
   def showAddNew(players: Players): Boolean = {
     val resource = getClass.getResourceAsStream("view/GameOver.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
@@ -127,8 +139,10 @@ object Main extends JFXApp with Movement{
       }
     }
     control.players = players
+    players.name.value = "Unknown"
     control.dialogStage = dialog
-    dialog.showAndWait()
+    Thread.sleep(500)
+    dialog.show()
     control.okClicked
   }
 }
