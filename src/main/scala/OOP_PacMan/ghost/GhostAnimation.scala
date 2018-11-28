@@ -15,11 +15,10 @@ import scalafx.scene.input.KeyCode
 import scalafx.scene.paint.Color
 import scalafx.scene.shape.Rectangle
 import scalafx.util.Duration
-
 import scala.util.Random
 
 
-object Ghosts extends Movement {
+object GhostAnimation extends Movement {
 
   /** set ghosts images */
   val purpleGhostImg = new Image(new File("src/main/resource/OOP_PacMan/image/purpleghost-down.png").toURI.toURL.toString)
@@ -50,14 +49,20 @@ object Ghosts extends Movement {
   var randomNoRed: Int = 0
 
 
+  //see if pacman died
+  var died =false
+
   //animate ghost movement
   val animationTimer = AnimationTimer(e => {
-    //set range of random numbers from 1 to 4
+    //set range of random numbers from 1 to 4 as directions
     val start = 1
     val end = 4
 
+    //so pacman can move it died
+    died = false
+
     //used to generate random numbers at timed manner(about few frames in between)
-    //or ghost will go on a spasm
+    //or ghost will be undecisive on where to go
     frameCount += 1
     if (frameCount >= 60) {
       val random = new Random()
@@ -74,6 +79,7 @@ object Ghosts extends Movement {
       frameCount2 = 0
     }
 
+    //where ghosts start moving
     movement(purpleGhost, randomNoPurple, 6)
 
     movement(blueGhost, randomNoBlue, 6)
@@ -82,12 +88,15 @@ object Ghosts extends Movement {
 
     movement(redGhost, randomNoRed, 6)
 
+
     if(pacman.getBoundsInParent().intersects(purpleGhost.getBoundsInParent())||
        pacman.getBoundsInParent().intersects(blueGhost.getBoundsInParent())||
        pacman.getBoundsInParent().intersects(coralGhost.getBoundsInParent())||
        pacman.getBoundsInParent().intersects(redGhost.getBoundsInParent())){
           die()
+          died = true
         }
+
   })//end animation timer
 
   // return to position everytime game starts
@@ -107,11 +116,6 @@ object Ghosts extends Movement {
     animationTimer.start()
   }
 
-  def stopGhosts(): Unit ={
-    animationTimer.stop()
-
-  }
-
   //when pacman loses
   def die() {
     val timer = new PauseTransition(Duration(2000))
@@ -127,9 +131,6 @@ object Ghosts extends Movement {
       } //end die
       timer.play()
     }
-
-
-
 
   //**reserved**//
 

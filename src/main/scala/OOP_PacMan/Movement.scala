@@ -125,7 +125,7 @@ trait Movement {
   } //end movement
 
   /** pacman movement */
-  def movement(node: Node, keycode: KeyCode): Unit = {
+  def movement(node: Node, keycode: KeyCode,speed:Int): Unit = {
     var nodeTester = new Pacman
     var thisWall: Node = PacmanMap.wallList.head
 
@@ -133,7 +133,7 @@ trait Movement {
 
       case KeyCode.W
       =>
-        nodeTester.translateY() = node.getTranslateY - 6
+        nodeTester.translateY() = node.getTranslateY - speed
         nodeTester.translateX() = node.getTranslateX
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
@@ -147,7 +147,7 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableUp.contains(1)) {
-          node.translateY() = node.translateY.value - 6
+          node.translateY() = node.translateY.value - speed
           Coin.checkCoinCollision(node)
           moveableUp = Array(0)
         } else {
@@ -156,7 +156,7 @@ trait Movement {
 
       case KeyCode.A
       =>
-        nodeTester.translateX() = node.getTranslateX - 6
+        nodeTester.translateX() = node.getTranslateX - speed
         nodeTester.translateY() = node.getTranslateY
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
@@ -170,7 +170,7 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableLeft.contains(1)) {
-          node.translateX() = node.getTranslateX - 6
+          node.translateX() = node.getTranslateX - speed
           Coin.checkCoinCollision(node)
           moveableLeft = Array(0)
         } else {
@@ -179,7 +179,7 @@ trait Movement {
 
       case KeyCode.S
       =>
-        nodeTester.translateY() = node.getTranslateY + 6
+        nodeTester.translateY() = node.getTranslateY + speed
         nodeTester.translateX() = node.getTranslateX
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
@@ -193,7 +193,7 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableDown.contains(1)) {
-          node.translateY() = node.getTranslateY + 6
+          node.translateY() = node.getTranslateY + speed
           Coin.checkCoinCollision(node)
           moveableDown = Array(0)
         } else {
@@ -202,7 +202,7 @@ trait Movement {
 
       case KeyCode.D
       =>
-        nodeTester.translateX() = node.getTranslateX + 6
+        nodeTester.translateX() = node.getTranslateX + speed
         nodeTester.translateY() = node.getTranslateY
         for (row <- 1 until PacmanMap.wallList.size) {
           thisWall = PacmanMap.wallList.take(row).last
@@ -216,7 +216,7 @@ trait Movement {
           thisWall = PacmanMap.wallList.take(row).last
         }
         if (!moveableRight.contains(1)) {
-          node.translateX() = node.getTranslateX + 6
+          node.translateX() = node.getTranslateX + speed
           Coin.checkCoinCollision(node)
           moveableRight = Array(0)
         } else {
@@ -226,7 +226,6 @@ trait Movement {
       case _ =>
     }
   } //end movement
-
 
 }
 

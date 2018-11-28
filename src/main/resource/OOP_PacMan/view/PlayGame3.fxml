@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.canvas.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="500.0" minHeight="-Infinity" minWidth="200.0" prefHeight="700.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.PlayGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="500.0" minHeight="-Infinity" minWidth="200.0" prefHeight="700.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OOP_PacMan.controller.PlayGameController">
    <children>
-      <BorderPane prefHeight="716.0" prefWidth="400.0">
+      <BorderPane prefHeight="716.0" prefWidth="400.0" styleClass="background">
          <top>
             <GridPane maxWidth="400.0" prefHeight="54.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                <children>
@@ -37,11 +43,10 @@
                <children>
                   <GridPane maxWidth="400.0" prefHeight="96.0" prefWidth="400.0">
                      <children>
-                        <ImageView fx:id="escPause" fitHeight="45.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                        <Button id="pause-button" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#openPause" prefHeight="10.0" prefWidth="40.0">
                            <GridPane.margin>
                               <Insets bottom="30.0" left="15.0" />
-                           </GridPane.margin>
-                        </ImageView>
+                           </GridPane.margin></Button>
                         <Label prefHeight="38.0" prefWidth="140.0" styleClass="font" text=" : PAUSE" textFill="WHITE" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets bottom="30.0" />
@@ -52,16 +57,18 @@
                               <Insets bottom="30.0" />
                            </GridPane.margin>
                         </Label>
-                        <Button id="quit-button" mnemonicParsing="false" onAction="#quitGame" prefHeight="10.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.valignment="CENTER">
+                        <Button id="quit-button" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#quitGame" prefHeight="10.0" prefWidth="40.0" GridPane.columnIndex="2">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
                            <GridPane.margin>
-                              <Insets bottom="30.0" />
-                           </GridPane.margin>
-                        </Button>
+                              <Insets bottom="30.0" left="10.0" />
+                           </GridPane.margin></Button>
                      </children>
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="75.0" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="55.0" minWidth="10.0" prefWidth="55.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="40.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="55.0" minWidth="10.0" prefWidth="40.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="145.0" />
                      </columnConstraints>
                      <rowConstraints>
@@ -72,8 +79,25 @@
             </VBox>
          </bottom>
          <center>
-            <FlowPane fx:id="flow" prefHeight="700.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
+            <FlowPane fx:id="flow" prefHeight="443.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
+      <StackPane fx:id="pauseRoot" prefHeight="500.0" prefWidth="400.0">
+         <children>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="130.0" prefWidth="300.0" styleClass="font-Title-Pause" text="PAUSE" textFill="WHITE" />
+                  <Button contentDisplay="BOTTOM" focusTraversable="false" mnemonicParsing="false" onAction="#closePause" prefHeight="38.0" prefWidth="95.0" text="RESUME">
+                     <styleClass>
+                        <String fx:value="title-button" />
+                        <String fx:value="font" />
+                     </styleClass></Button>
+               </children>
+               <styleClass>
+                  <String fx:value="background" />
+                  <String fx:value="pause-border" />
+               </styleClass>
+            </VBox>
+         </children></StackPane>
    </children>
 </AnchorPane>

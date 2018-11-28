@@ -5,7 +5,7 @@ import java.io.{File, FileInputStream}
 import OOP_PacMan.component.Wall
 import OOP_PacMan.Main
 import OOP_PacMan.PacmanMap
-import OOP_PacMan.ghost.Ghosts
+import OOP_PacMan.ghost.GhostAnimation
 import javafx.collections.ObservableList
 import scalafx.Includes._
 import scalafx.beans.property.DoubleProperty
@@ -29,9 +29,8 @@ class PlayGameController(
                           private var anchorPane: AnchorPane,
                           private var pane: Pane,
                           private var hbox: HBox,
-                          private val escPause : ImageView,
-                          private var highScoreLabel : Label
-                        )  {
+                          private var pauseRoot: StackPane
+                        ) {
 
   var map1 = Array(
     //                      1 1 1 1 1 1 1 1
@@ -68,13 +67,22 @@ class PlayGameController(
 
 
 
-  /** pause game */
-  val escPauseImg = new Image(new FileInputStream("src/main/resource/OOP_PacMan/image/esc.png"))
-  escPause.setImage(escPauseImg)
-
   def quitGame(action:ActionEvent)={
     Main.backToMain()
-    Ghosts.stopGhosts()
+    GhostAnimation.animationTimer.stop()
   }
+
+  //for pause pop up
+  def openPause(action:ActionEvent)={
+    GhostAnimation.animationTimer.stop()
+    pauseRoot.toFront()
+  }
+
+  def closePause(action: ActionEvent)={
+    GhostAnimation.animationTimer.start()
+    pauseRoot.toBack()
+  }
+
+  pauseRoot.toBack()
 
 }

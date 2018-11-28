@@ -13,8 +13,7 @@ import scalafx.stage.{Modality, Stage}
 import Database.Database
 import OOP_PacMan.controller.{GameOverController, PlayGameController}
 import OOP_PacMan.component.{Coin, Pacman}
-import OOP_PacMan.ghost.Ghosts
-import OOP_PacMan.ghost.Ghosts.animationTimer
+import OOP_PacMan.ghost.GhostAnimation
 import User.Players
 import scalafx.animation.PauseTransition
 import scalafx.collections.ObservableBuffer
@@ -67,8 +66,10 @@ object Main extends JFXApp with Movement{
 //    stage.setMaxWidth(600)
     stage.setMinWidth(423)
 
+    GhostAnimation.preparingGhost
+
     showGameCanvas(roots2)
-    Ghosts.preparingGhost()
+    GhostAnimation.preparingGhost()
 
   }
 
@@ -77,23 +78,26 @@ object Main extends JFXApp with Movement{
     pacman.translateX() = 0
     pacman.translateY() = 0
 
+    //return ghosts to original position and start animation
+    GhostAnimation.preparingGhost()
+
     val group = new Group() {
 
       stage.scene().onKeyPressed = k =>{
-
-        movement(pacman,k.getCode())
+        if(!GhostAnimation.died){
+          movement(pacman,k.getCode(),6)
+        }
       }
 
       children = List(
         pacman,
-        Ghosts.purpleGhost,
-        Ghosts.blueGhost,
-        Ghosts.coralGhost,
-        Ghosts.redGhost
+        GhostAnimation.purpleGhost,
+        GhostAnimation.blueGhost,
+        GhostAnimation.coralGhost,
+        GhostAnimation.redGhost
       )
     }//end group
     root.getChildren.add(group)
-
   }//end showgamecanvas
 
 
