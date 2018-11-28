@@ -13,14 +13,16 @@ import scalafx.stage.{Modality, Stage}
 import Database.Database
 import OOP_PacMan.controller.{GameOverController, PlayGameController}
 import OOP_PacMan.component.{Coin, Pacman}
+import OOP_PacMan.ghost.GhostAnimation
 import User.Players
-import scalafx.beans.property.DoubleProperty
+import scalafx.animation.PauseTransition
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.image.{Image, ImageView}
 import scalafx.scene.input.KeyCode
 import scalafx.scene.layout.AnchorPane
+import scalafx.util.Duration
 
-object Main extends JFXApp {
+object Main extends JFXApp with Movement{
 
   Database.setupDB()
   val rootResource = getClass.getResourceAsStream("view/MainMenu.fxml")
@@ -40,16 +42,21 @@ object Main extends JFXApp {
     }
   }
 
+  /**retrieve database names and score*/
   val Userlist = new ObservableBuffer[Players]()
 
   Userlist ++= Players.getAllUsers
+
+  /**new pacman*/
+  var pacman = new Pacman
+
 
   /** close game */
   def closeGame() = {
     stage.close()
   }
 
-  //play game page
+  /** play game page*/
   def playGame(): Unit = {
     val resource = getClass.getResourceAsStream("view/PlayGame3.fxml")
     val loader = new FXMLLoader(null, NoDependencyResolver)
@@ -59,136 +66,42 @@ object Main extends JFXApp {
 //    stage.setMaxWidth(600)
     stage.setMinWidth(423)
 
+    GhostAnimation.preparingGhost
+
     showGameCanvas(roots2)
+    GhostAnimation.preparingGhost()
+
   }
 
+
+  //var thisWall: Node = PacmanMap.wallList.head
+
+
   def showGameCanvas(root: AnchorPane): Unit = {
+    pacman.translateX() = 0
+    pacman.translateY() = 0
+
+    //return ghosts to original position and start animation
+    GhostAnimation.preparingGhost()
 
     val group = new Group() {
 
-
-      var thisWall: Node = PacmanMap.wallList.head
-      var moveableUp = Array(0)
-      var moveableDown = Array(0)
-      var moveableLeft = Array(0)
-      var moveableRight = Array(0)
-      var pacman = new Pacman
-//      pacman.x = 192
-//      pacman.y = 306
-      var pacmanTester = new Pacman
-//      pacmanTester.x = pacman.x.toDouble
-//      pacmanTester.y = pacman.y.toDouble
-
-        stage.scene().onKeyPressed = k => k.code match {
-
-          case KeyCode.W
-          =>
-
-            pacmanTester.pacmanY() = pacman.pacmanY.value - 6
-            pacmanTester.pacmanX() = pacman.pacmanX.value
-            for (row <- 1 until PacmanMap.wallList.size){
-              thisWall = PacmanMap.wallList.take(row).last
-
-              if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
-                  thisWall.localToScene(thisWall.getBoundsInLocal()))){
-                moveableUp = moveableUp ++ Array(0)
-              }else {
-                moveableUp = moveableUp ++ Array(1)
-              }
-              thisWall = PacmanMap.wallList.take(row).last
-            }
-            if (!moveableUp.contains(1)) {
-              pacman.pacmanY() = pacman.pacmanY.value - 6
-              pacman.rotate = -90
-              Coin.checkCoinCollision(pacman)
-              pacman.playMovingSound
-              moveableUp = Array(0)
-            } else {
-              moveableUp = Array(0)
-            }
-
-          case KeyCode.A
-        =>
-          pacmanTester.pacmanX() = pacman.pacmanX.value - 6
-          pacmanTester.pacmanY() = pacman.pacmanY.value
-          for (row <- 1 until PacmanMap.wallList.size){
-            thisWall = PacmanMap.wallList.take(row).last
-
-            if (!pacmanTester.localToScene(pacmanTester.getBoundsInLocal()).intersects(
-                thisWall.localToScene(thisWall.getBoundsInLocal()))){
-              moveableLeft = moveableLeft ++ Array(0)
-            }else {
-              moveableLeft = moveableLeft ++ Array(1)
-            }
-            thisWall = PacmanMap.wallList.take(row).last
-          }
-          if (!moveableLeft.contains(1)) {
-            pacman.pacmanX() = pacman.pacmanX.value - 6
-            pacman.rotate = 180
-            Coin.checkCoinCollision(pacman)
-            pacman.playMovingSound
-            moveableLeft = Array(0)
-          } else {
-            moveableLeft = Array(0)
-          }
-          case KeyCode.S
-        =>
-          pacmanTester.pacmanY() = pacman.pacmanY.value + 6
-            pacmanTester.pacmanX() = pacman.pacmanX.value
-            for (row <- 1 until PacmanMap.wallList.size){
-              thisWall = PacmanMap.wallList.take(row).last
-
-              if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(
-                  thisWall.localToScene(thisWall.getBoundsInLocal()))){
-                moveableDown = moveableDown ++ Array(0)
-              }else {
-                moveableDown = moveableDown ++ Array(1)
-              }
-              thisWall = PacmanMap.wallList.take(row).last
-            }
-            if (!moveableDown.contains(1)) {
-              pacman.pacmanY() = pacman.pacmanY.value + 6
-              pacman.rotate = 90
-              Coin.checkCoinCollision(pacman)
-              pacman.playMovingSound
-              moveableDown = Array(0)
-          } else {
-            moveableDown = Array(0)
-          }
-
-        case KeyCode.D
-        =>
-          pacmanTester.pacmanX() = pacman.pacmanX.value + 6
-          pacmanTester.pacmanY() = pacman.pacmanY.value
-          for (row <- 1 until PacmanMap.wallList.size){
-            thisWall = PacmanMap.wallList.take(row).last
-
-            if (!pacmanTester.localToScene(pacman.getBoundsInLocal()).intersects(
-                thisWall.localToScene(thisWall.getBoundsInLocal()))){
-              moveableRight = moveableRight ++ Array(0)
-            }else {
-              moveableRight = moveableRight ++ Array(1)
-            }
-            thisWall = PacmanMap.wallList.take(row).last
-          }
-          if (!moveableRight.contains(1)) {
-            pacman.pacmanX() = pacman.pacmanX.value + 6
-            Coin.checkCoinCollision(pacman)
-            pacman.rotate = 0
-            pacman.playMovingSound
-            moveableRight = Array(0)
-          } else {
-            moveableRight = Array(0)
-          }
-        case _ =>
+      stage.scene().onKeyPressed = k =>{
+        if(!GhostAnimation.died){
+          movement(pacman,k.getCode(),6)
+        }
       }
 
       children = List(
-        pacman
+        pacman,
+        GhostAnimation.purpleGhost,
+        GhostAnimation.blueGhost,
+        GhostAnimation.coralGhost,
+        GhostAnimation.redGhost
       )
-    }
+    }//end group
     root.getChildren.add(group)
-  }
+  }//end showgamecanvas
 
 
   //show high score page
